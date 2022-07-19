@@ -11,6 +11,7 @@ SceneManager::SceneManager(): SceneState(nullptr)
 
 SceneManager::~SceneManager()
 {
+	Release();
 }
 
 
@@ -28,10 +29,10 @@ void SceneManager::SetScene(SceneID _SceneID)
 		SceneState = new Logo;
 		break;
 	case SceneID::MENU:
-		SceneState = new Menu;
+		//SceneState = new Menu;
 		break;
 	case SceneID::STAGE:
-		SceneState = new Stage;
+		//SceneState = new Stage;
 		break;
 	case SceneID::EXIT:
 		exit(NULL);
@@ -54,4 +55,6 @@ void SceneManager::Render()
 
 void SceneManager::Release()
 {
+	delete SceneState;
+	SceneState = nullptr;
 }

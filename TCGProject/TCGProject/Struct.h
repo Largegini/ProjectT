@@ -14,3 +14,12 @@ struct Transform
 	Vector3 Rotation;
 	Vector3 Scale;
 };
+
+struct RenderInfo
+{
+	int Length;
+	int MaxSize;
+	int Color;
+
+	char* Buffer[40];
+};

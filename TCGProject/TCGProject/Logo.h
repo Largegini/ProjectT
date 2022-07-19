@@ -5,6 +5,10 @@ class Logo : public Scene
 public:
 	Logo();
 	virtual ~Logo();
+private:
+	RenderInfo TxtInfo;
+	ULONGLONG Time;
+	DWORD dwkey;
 public:
 	virtual void Start()override;
 	virtual void Update()override;
