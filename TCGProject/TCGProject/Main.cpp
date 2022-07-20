@@ -8,7 +8,7 @@
 //https://github.com/Winstone-hub/1800.git
 int main()
 {
-	system("mode con:cols=150 lines=40");
+	system("mode con:cols=150 lines=55");
 
 	ULONGLONG Time = GetTickCount64();
 

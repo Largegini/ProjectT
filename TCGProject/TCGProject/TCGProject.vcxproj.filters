@@ -40,6 +40,12 @@
     <Filter Include="소스 파일\99.Manager\CursorManager">
       <UniqueIdentifier>{fa586ed2-1b73-498b-8cbf-26eea54f3f03}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\02.Object">
+      <UniqueIdentifier>{d590c474-5889-4a39-b60d-772ee6a2ef06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.Object\MenuCursor">
+      <UniqueIdentifier>{1132bb44-cead-4c13-b7ca-992db3d8d588}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -68,6 +74,9 @@
     </ClCompile>
     <ClCompile Include="CursorManager.cpp">
       <Filter>소스 파일\99.Manager\CursorManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>소스 파일\02.Object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +115,9 @@
     </ClInclude>
     <ClInclude Include="Constant.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>소스 파일\02.Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -8,7 +8,7 @@ public:
 private:
 	RenderInfo TxtInfo;
 	ULONGLONG Time;
-	DWORD dwkey;
+	int Showtime;
 public:
 	virtual void Start()override;
 	virtual void Update()override;

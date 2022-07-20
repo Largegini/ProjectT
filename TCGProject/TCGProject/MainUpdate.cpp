@@ -13,8 +13,8 @@ MainUpdate::~MainUpdate()
 
 void MainUpdate::Start()
 {
-	CursorManager::GetInstance()->CreateBuffer(150.0f, 40.0f);
-	SceneManager::GetInstance()->SetScene(SceneID::LOGO);
+	CursorManager::GetInstance()->CreateBuffer(150.0f, 55.0f);
+	SceneManager::GetInstance()->SetScene(SceneID::MENU);
 }
 
 void MainUpdate::Update()

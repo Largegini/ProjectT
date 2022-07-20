@@ -1,9 +1,8 @@
 #include "Logo.h"
 #include "CursorManager.h"
-#include "InputManager.h"
 #include "SceneManager.h"
 
-Logo::Logo():dwkey(0)
+Logo::Logo():Showtime(0)
 {
 }
 
@@ -41,10 +40,10 @@ void Logo::Start()
 
 void Logo::Update()
 {
-	dwkey = InputManager::GetInstance()->GetKey();
+	++Showtime;
 
-	if (dwkey & KEY_RETURN)
-		SceneManager::GetInstance()->SetScene(SceneID::EXIT);
+	if (Showtime >= 20)
+		SceneManager::GetInstance()->SetScene(SceneID::MENU);
 }
 
 void Logo::Render()
