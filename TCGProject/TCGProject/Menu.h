@@ -1,6 +1,7 @@
 #pragma once
 #include "Scene.h"
 
+class HowtoPlay;
 class Menu : public Scene
 {
 public:
@@ -11,6 +12,8 @@ private:
 	RenderInfo StartInfo;
 	RenderInfo ExitInfo;
 	RenderInfo HTPInfo;
+
+	HowtoPlay* Help;
 
 	ULONGLONG Time;
 	DWORD dwkey;

@@ -1,16 +1,13 @@
 #pragma once
-#include "Scene.h"
-class Stage:public Scene
+#include "Map.h"
+class Dungeon : public Map
 {
 public:
-	Stage();
-	virtual ~Stage();
-
+	Dungeon();
+	virtual ~Dungeon();
 public:
 	virtual void Start()override;
 	virtual void Update()override;
 	virtual void Render()override;
 	virtual void Release()override;
-
 };
-

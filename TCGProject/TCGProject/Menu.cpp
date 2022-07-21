@@ -2,17 +2,24 @@
 #include "SceneManager.h"
 #include "InputManager.h"
 #include "CursorManager.h"
+#include "HowtoPlay.h"
 
-Menu::Menu() : dwkey(0), Color(0), CursorPos(0), ShowWin(false)
+Menu::Menu() : dwkey(0), Color(0), CursorPos(0), ShowWin(false), Help(nullptr)
 {
 }
 
 Menu::~Menu()
 {
+	Release();
 }
 
 void Menu::Start()
 {   
+	ShowWin = false;
+
+	Help = new HowtoPlay;
+	Help->Start();
+
 Title.Buffer[0] = (char*)"===============================================================";
 Title.Buffer[1] = (char*)"ケ                           ,,                              ケ";
 Title.Buffer[2] = (char*)"ケ   .g8'''bgd             `7MM                              ケ";
@@ -76,31 +83,41 @@ void Menu::Update()
 {
 	dwkey = InputManager::GetInstance()->GetKey();
 
-	if (dwkey & KEY_UP && CursorPos > 0)
-		CursorPos--;
-	if (dwkey & KEY_DOWN && CursorPos < 2)
-		CursorPos++;
-	if (dwkey & KEY_RETURN)
+	if (ShowWin)
 	{
-		switch (CursorPos)
+		ShowWin = Help->Update();
+	}
+
+	else
+	{
+		if (dwkey & KEY_UP && CursorPos > 0)
+			CursorPos--;
+		if (dwkey & KEY_DOWN && CursorPos < 2)
+			CursorPos++;
+		if (dwkey & KEY_RETURN)
 		{
-		case 0:
-			SceneManager::GetInstance()->SetScene(SceneID::STAGE);
-			break;
-		case 1:
-			ShowWin = true;
-			break;
-		case 2:
-			SceneManager::GetInstance()->SetScene(SceneID::EXIT);
-			break;
-		default:
-			break;
+			switch (CursorPos)
+			{
+			case 0:
+				SceneManager::GetInstance()->SetScene(SceneID::STAGE);
+				break;
+			case 1:
+				ShowWin = true;
+				break;
+			case 2:
+				SceneManager::GetInstance()->SetScene(SceneID::EXIT);
+				break;
+			default:
+				break;
+			}
 		}
 	}
 }
 
 void Menu::Render()
 {
+	
+
 	for (int i = 0; i < Title.MaxSize; ++i)
 	{
 		CursorManager::GetInstance()->WriteBuffer(5.0f, 5.0f + i
@@ -132,21 +149,21 @@ void Menu::Render()
 		CursorManager::GetInstance()->WriteBuffer((145.0f - StartInfo.Length)-
 			(strlen(CursorTxt) + 2.0f), 26.0f, CursorTxt, StartInfo.Color);
 		StartInfo.Color = 15;
-		HTPInfo.Color = 7;
-		ExitInfo.Color = 7;
+		HTPInfo.Color = 8;
+		ExitInfo.Color = 8;
 		break;
 	case 1:
 		CursorManager::GetInstance()->WriteBuffer((145.0f - HTPInfo.Length) -
 			(strlen(CursorTxt) + 2.0f),38.0f, CursorTxt, HTPInfo.Color);
-		StartInfo.Color = 7;
+		StartInfo.Color = 8;
 		HTPInfo.Color = 15;
-		ExitInfo.Color = 7;
+		ExitInfo.Color = 8;
 		break;
 	case 2:
 		CursorManager::GetInstance()->WriteBuffer((145.0f - ExitInfo.Length) -
 			(strlen(CursorTxt) + 2.0f), 49.0f, CursorTxt, ExitInfo.Color);
-		StartInfo.Color = 7;
-		HTPInfo.Color = 7;
+		StartInfo.Color = 8;
+		HTPInfo.Color = 8;
 		ExitInfo.Color = 15;
 		break;
 	default:
@@ -155,10 +172,12 @@ void Menu::Render()
 
 	if (ShowWin)
 	{
-	
+		Help->Render();
 	}
 }
 
 void Menu::Release()
 {
+	delete Help;
+	Help = nullptr;
 }

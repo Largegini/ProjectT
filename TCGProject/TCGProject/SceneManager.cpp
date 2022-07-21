@@ -32,7 +32,7 @@ void SceneManager::SetScene(SceneID _SceneID)
 		SceneState = new Menu;
 		break;
 	case SceneID::STAGE:
-		//SceneState = new Stage;
+		SceneState = new Stage;
 		break;
 	case SceneID::EXIT:
 		exit(NULL);
