@@ -12,42 +12,12 @@ Village::~Village()
 
 void Village::Start()
 {
-    
-  Quest.Buffer[0] = (char*)" `                ##`                                      ##`                     ##` `                   ``##`   ##`   ";
-  Quest.Buffer[1] = (char*)"############      ##`       #################`            ##`       #######` `    `##` `   #############   ``##     `##  ";
-  Quest.Buffer[2] = (char*)"        `##` `    ##`       ##```          ``           `##``     ###`    ###`    `##`      `        `##   ``##`   ``### ";
-  Quest.Buffer[3] = (char*)"      ``##`       ##`       ##`                         ##`    ``###       `##    `##`     ` `````````##   ``##`   ` `###";
-  Quest.Buffer[4] = (char*)"     `##` `       ##`       ##`                       ``##     ` ##``      `##    `##`     #############   ``##`      `##";
-  Quest.Buffer[5] = (char*)" `####`   `       ##`       ##`                        ###     ```##       `##    `##`     ##`       ` `   ``##`       ##";
-  Quest.Buffer[6] = (char*)"`#```  ``````````````       ###```````````````         ###`       ###` ```###`    `##`     ##`        `    ``##`      `##";
-  Quest.Buffer[7] = (char*)"  ` ################`      ```````````````````       ` ###`       ` `#####`       `##`     #############   ``##`      `##";
-  Quest.Buffer[8] = (char*)"   `              ##       ` `             `         ` `##`        ``  ` ``       `##`      `  ``##`` `    ``##`      `##";
-  Quest.Buffer[9] = (char*)"  `   `           ##    `                     ` ``    ` ##``   ``    `  ` `  ```#``##`  `````````##``######``##`   `` ###";
-  Quest.Buffer[10] = (char*)"    ################    `########################`    ```##` ` `############````  `##`   ````````````  ` ````##    ``### ";
-  Quest.Buffer[11] = (char*)"    ##``           `      `                   ````      ``## ``          `        `##`                     ``##    ``##` ";
-  Quest.Buffer[12] = (char*)"  ` #################                                    ` `#`                     ##`                      `##    ##`   ";
+    Ground.Buffer[0] = (char*)"-----------------------------------------------------------------------------------------------------------------------------------------------------";
 
-  Quest.Length = strlen(" `                ##`                                      ##`                     ##` `                   ``##`   ##`   ");
-  Quest.MaxSize = 13;
-  Quest.Color = 15;
+    Ground.Length = strlen("-----------------------------------------------------------------------------------------------------------------------------------------------------");
+    Ground.MaxSize = 1;
+    Ground.Color = 15;
 
- Store.Buffer[0] = (char*)"        `      ````##`                      `##";   
- Store.Buffer[1] = (char*)"      ###         `##     `############`     ##";   
- Store.Buffer[2] = (char*)"      ##`         `##     ``    ##`    `     ##";   
- Store.Buffer[3] = (char*)"    `####`        `######      ###`` ` ########";   
- Store.Buffer[4] = (char*)" ` ``##`##`  ``   `##    ` ```#####`` ` `   `##";   
- Store.Buffer[5] = (char*)" ``##``  ###` `   `##   ``` `##`` `###`` ``` ##";   
- Store.Buffer[6] = (char*)"###`       `##`   `##    `###`      `###`    ##";   
- Store.Buffer[7] = (char*)"   ```  ` ``    `````        ``                ";   
- Store.Buffer[8] = (char*)"    ` `############ `       `  ################";   
- Store.Buffer[9] = (char*)"    `##``       ``###`         ## ```````````##";   
- Store.Buffer[10] = (char*)"    ###  `         ##          ##`          `##";   
- Store.Buffer[11] = (char*)"    `###`  `     ####          ## `          ##";   
- Store.Buffer[12] = (char*)"       ###########```       ` `################";   
-
- Store.Length = strlen("        `      ````##`                      `##");
- Store.MaxSize = 13;
- Store.Color = 15;
 }
 
 void Village::Update()
@@ -58,11 +28,11 @@ void Village::Update()
 
 void Village::Render()
 {
-    for (int i = 0; i < Quest.MaxSize; ++i)
-    {
-        CursorManager::GetInstance()->WriteBuffer(145.0f - Quest.Length,
-            5.0f + i, Quest.Buffer[i], Quest.Color);
-    }
+   // for (int i = 0; i < Ground.MaxSize; ++i)
+    //{
+        CursorManager::GetInstance()->WriteBuffer(0.0f, 45.0f,
+            Ground.Buffer[0], Ground.Color);
+   // }
 }
 
 void Village::Release()
