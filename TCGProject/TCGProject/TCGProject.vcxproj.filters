@@ -70,6 +70,12 @@
     <Filter Include="소스 파일\04.Map\Village">
       <UniqueIdentifier>{10781457-56ae-47d9-a74f-825c4c18aa76}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\02.Object\Player">
+      <UniqueIdentifier>{969ccd78-0fe1-4ee7-bba6-543e2c22b0cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\99.Manager\CollisionManager">
+      <UniqueIdentifier>{5ab33b61-6895-4053-9e1e-672b68fa5db0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -118,7 +124,10 @@
       <Filter>소스 파일\04.Map\Dungeon</Filter>
     </ClCompile>
     <ClCompile Include="Map.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\04.Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>소스 파일\02.Object\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -177,7 +186,10 @@
       <Filter>헤더 파일\Include</Filter>
     </ClInclude>
     <ClInclude Include="Map.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>소스 파일\04.Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>소스 파일\02.Object\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

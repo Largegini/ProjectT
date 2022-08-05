@@ -1,5 +1,6 @@
 #pragma once
 #include "Map.h"
+class Object;
 class Village : public Map
 {
 public:
@@ -8,13 +9,14 @@ public:
 private:
 	RenderInfo Quest;
 	RenderInfo Store;
-
 	RenderInfo Ground;
 
 	DWORD dwkey;
-
 	char* Cursor;
 
+	Object* _Player;
+	Object* QDoor;
+	Object* SDoor;
 public:
 	virtual void Start()override;
 	virtual void Update()override;
