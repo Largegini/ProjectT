@@ -6,5 +6,5 @@ enum class SceneID
 
 enum class MapID
 {
-	VILLAGE, STORE, DUNGEON
+	VILLAGE, STORE, GUILD,DUNGEON
 };

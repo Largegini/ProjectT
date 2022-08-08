@@ -10,6 +10,7 @@ private:
 	RenderInfo Quest;
 	RenderInfo Store;
 	RenderInfo Ground;
+	RenderInfo Key;
 
 	DWORD dwkey;
 	char* Cursor;

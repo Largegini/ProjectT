@@ -58,6 +58,7 @@ bool HowtoPlay::Update()
 
 	if (dwkey & KEY_ESCAPE)
 		return false;
+	return true;
 }
 
 void HowtoPlay::Render()

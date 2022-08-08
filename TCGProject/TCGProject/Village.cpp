@@ -3,6 +3,7 @@
 #include "CursorManager.h"
 #include "Player.h"
 #include "CollisionManager.h"
+#include "MapManager.h"
 
 Village::Village(): dwkey(0), _Player(nullptr)
 {
@@ -82,6 +83,14 @@ void Village::Start()
     Ground.VectorInfo.Rotation = Vector3(0.0f, 0.0f);
     Ground.VectorInfo.Scale = Vector3(0.0f, 0.0f);
 
+    Key.Buffer[0] = (char*)" ___ ";
+    Key.Buffer[1] = (char*)"|   |";
+    Key.Buffer[2] = (char*)"| ^ |";
+    Key.Buffer[3] = (char*)"|___|";
+    Key.Length = strlen(" ___ ");
+    Key.MaxSize = 4;
+    Key.Color = 15;
+
     _Player = new Player;
     _Player->Start();
 }
@@ -90,7 +99,20 @@ void Village::Update()
 {
     dwkey = InputManager::GetInstance()->GetKey();
     _Player->Update();
+    
+   
+    if (CollisionManager::RectCollision(_Player->GetTransform(), Store.VectorInfo))
+    {
+        if (dwkey & KEY_UP)
+            MapManager::GetInstance()->SetMap(MapID::STORE);
+    }
 
+    if (CollisionManager::RectCollision(_Player->GetTransform(), Quest.VectorInfo))
+    {
+
+        if (dwkey & KEY_UP)
+            MapManager::GetInstance()->SetMap(MapID::GUILD);
+    }
 }
 
 void Village::Render()
@@ -112,6 +134,28 @@ void Village::Render()
     {
         CursorManager::GetInstance()->WriteBuffer(0.0f, 45.0f+i,
             Ground.Buffer[i], Ground.Color);
+    }
+
+    if (CollisionManager::RectCollision(_Player->GetTransform(), Quest.VectorInfo
+        ))
+    {
+        for (int i = 0; i < Key.MaxSize; ++i)
+        {
+            CursorManager::GetInstance()->WriteBuffer(Quest.VectorInfo.Position.x +
+                (Quest.Length / 2) - Key.Length, 35.0f + i, 
+                Key.Buffer[i], Key.Color);
+        }
+    }
+
+    if (CollisionManager::RectCollision(_Player->GetTransform(), Store.VectorInfo
+        ))
+    {
+        for (int i = 0; i < Key.MaxSize; ++i)
+        {
+            CursorManager::GetInstance()->WriteBuffer(Store.VectorInfo.Position.x +
+                (Store.Length / 2) - Key.Length, 45.0f - Key.MaxSize + i,
+                Key.Buffer[i], Key.Color);
+        }
     }
     _Player->Render();
 }

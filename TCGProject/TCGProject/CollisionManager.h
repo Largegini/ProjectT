@@ -14,6 +14,7 @@ public:
 			(int)_Current.Position.y == (int)_Target.Position.y)
 			return true;
 
-		return false;
+		else
+			return false;
 	}
 };
