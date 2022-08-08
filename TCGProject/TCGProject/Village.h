@@ -15,8 +15,6 @@ private:
 	char* Cursor;
 
 	Object* _Player;
-	Object* QDoor;
-	Object* SDoor;
 public:
 	virtual void Start()override;
 	virtual void Update()override;

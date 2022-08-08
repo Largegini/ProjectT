@@ -2,6 +2,7 @@
 #include "InputManager.h"
 #include "CursorManager.h"
 #include "Player.h"
+#include "CollisionManager.h"
 
 Village::Village(): dwkey(0), _Player(nullptr)
 {
@@ -35,6 +36,9 @@ void Village::Start()
     Quest.Length = strlen("  ##___    ____   _____    ______  _______   ____   __ ___## ");
     Quest.MaxSize = 17;
     Quest.Color = 15;
+    Quest.VectorInfo.Position = Vector3(5.0f, 28.0f);
+    Quest.VectorInfo.Rotation = Vector3(0.0f, 0.0f);
+    Quest.VectorInfo.Scale = Vector3((float)Quest.Length, (float)Quest.MaxSize);
 
     Store.Buffer[0]  = (char*)"      ###################################################      ";
     Store.Buffer[1]  = (char*)"     ##   _____                                         ##     ";
@@ -59,6 +63,9 @@ void Village::Start()
     Store.Length = strlen("#_______   ___   __     ________  ___    ____   __  __________#");
     Store.MaxSize = 19;
     Store.Color = 15;
+    Store.VectorInfo.Position = Vector3(80.0f, 26.0f);
+    Store.VectorInfo.Rotation = Vector3(0.0f, 0.0f);
+    Store.VectorInfo.Scale = Vector3(float(Store.Length), float(Store.MaxSize));
 
     Ground.Buffer[0] = (char*)"-----------------------------------------------------------------------------------------------------------------------------------------------------";
     Ground.Buffer[1] = (char*)"           '           `        *    ``        '        *          '               ``        '            `      ''      *          `*            '  ";
@@ -71,6 +78,9 @@ void Village::Start()
     Ground.Length = strlen("-----------------------------------------------------------------------------------------------------------------------------------------------------");
     Ground.MaxSize = 7;
     Ground.Color = 15;
+    Ground.VectorInfo.Position = Vector3(0.0f, 0.0f);
+    Ground.VectorInfo.Rotation = Vector3(0.0f, 0.0f);
+    Ground.VectorInfo.Scale = Vector3(0.0f, 0.0f);
 
     _Player = new Player;
     _Player->Start();
@@ -80,6 +90,7 @@ void Village::Update()
 {
     dwkey = InputManager::GetInstance()->GetKey();
     _Player->Update();
+
 }
 
 void Village::Render()
@@ -87,14 +98,14 @@ void Village::Render()
 
     for (int i = 0; i < Store.MaxSize; ++i)
     {
-        CursorManager::GetInstance()->WriteBuffer(80.0f, 26.0f + i,
-            Store.Buffer[i], Store.Color);
+        CursorManager::GetInstance()->WriteBuffer(Store.VectorInfo.Position.x
+            , Store.VectorInfo.Position.y + i, Store.Buffer[i], Store.Color);
     }
 
     for (int i = 0; i < Quest.MaxSize; ++i)
     {
-        CursorManager::GetInstance()->WriteBuffer(5.0f, 28.0f + i,
-            Quest.Buffer[i], Quest.Color);
+        CursorManager::GetInstance()->WriteBuffer(Quest.VectorInfo.Position.x,
+            Quest.VectorInfo.Position.y + i, Quest.Buffer[i], Quest.Color);
     }
 
     for (int i = 0; i < Ground.MaxSize; ++i)
