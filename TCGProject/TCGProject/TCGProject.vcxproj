@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Colider.cpp" />
     <ClCompile Include="CursorManager.cpp" />
     <ClCompile Include="Dungeon.cpp" />
     <ClCompile Include="HowtoPlay.cpp" />
@@ -158,6 +159,7 @@
     <ClCompile Include="Village.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Colider.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Constant.h" />
     <ClInclude Include="CursorManager.h" />
