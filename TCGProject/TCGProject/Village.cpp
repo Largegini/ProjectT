@@ -4,8 +4,10 @@
 #include "Player.h"
 #include "CollisionManager.h"
 #include "MapManager.h"
+#include "Portal_01.h"
+#include "Portal_02.h"
 
-Village::Village(): dwkey(0), _Player(nullptr)
+Village::Village(): dwkey(0), _Player(nullptr), _Portal1(nullptr), _Portal2(nullptr)
 {
 }
 
@@ -36,7 +38,7 @@ void Village::Start()
 
     Quest.Length = strlen("  ##___    ____   _____    ______  _______   ____   __ ___## ");
     Quest.MaxSize = 17;
-    Quest.Color = 15;
+    Quest.Color = 7;
     Quest.VectorInfo.Position = Vector3(5.0f, 28.0f);
     Quest.VectorInfo.Rotation = Vector3(0.0f, 0.0f);
     Quest.VectorInfo.Scale = Vector3((float)Quest.Length, (float)Quest.MaxSize);
@@ -63,7 +65,7 @@ void Village::Start()
 
     Store.Length = strlen("#_______   ___   __     ________  ___    ____   __  __________#");
     Store.MaxSize = 19;
-    Store.Color = 15;
+    Store.Color = 7;
     Store.VectorInfo.Position = Vector3(80.0f, 26.0f);
     Store.VectorInfo.Rotation = Vector3(0.0f, 0.0f);
     Store.VectorInfo.Scale = Vector3(float(Store.Length), float(Store.MaxSize));
@@ -78,21 +80,27 @@ void Village::Start()
 
     Ground.Length = strlen("-----------------------------------------------------------------------------------------------------------------------------------------------------");
     Ground.MaxSize = 7;
-    Ground.Color = 15;
+    Ground.Color = 7;
     Ground.VectorInfo.Position = Vector3(0.0f, 0.0f);
     Ground.VectorInfo.Rotation = Vector3(0.0f, 0.0f);
     Ground.VectorInfo.Scale = Vector3(0.0f, 0.0f);
 
-    Key.Buffer[0] = (char*)" ___ ";
-    Key.Buffer[1] = (char*)"|   |";
-    Key.Buffer[2] = (char*)"| ^ |";
-    Key.Buffer[3] = (char*)"|___|";
-    Key.Length = strlen(" ___ ");
+    Key.Buffer[0] = (char*)" ___          ";
+    Key.Buffer[1] = (char*)"|   |         ";
+    Key.Buffer[2] = (char*)"| ^ | 들어가기";
+    Key.Buffer[3] = (char*)"|___|         ";
+    Key.Length = strlen("| ^ | 들어가기");
     Key.MaxSize = 4;
-    Key.Color = 15;
+    Key.Color = 8;
 
     _Player = new Player;
     _Player->Start();
+
+    _Portal1 = new Portal_01;
+    _Portal1->Start();
+
+    _Portal2 = new Portal_02;
+    _Portal2->Start();
 }
 
 void Village::Update()
@@ -101,13 +109,15 @@ void Village::Update()
     _Player->Update();
     
    
-    if (CollisionManager::RectCollision(_Player->GetTransform(), Store.VectorInfo))
+    if (CollisionManager::RectCollision(_Portal2->GetTransform(), 
+        _Player->GetTransform()) )
     {
         if (dwkey & KEY_UP)
             MapManager::GetInstance()->SetMap(MapID::STORE);
     }
 
-    if (CollisionManager::RectCollision(_Player->GetTransform(), Quest.VectorInfo))
+    if (CollisionManager::RectCollision(_Portal1->GetTransform(),
+        _Player->GetTransform()))
     {
 
         if (dwkey & KEY_UP)
@@ -136,32 +146,41 @@ void Village::Render()
             Ground.Buffer[i], Ground.Color);
     }
 
-    if (CollisionManager::RectCollision(_Player->GetTransform(), Quest.VectorInfo
-        ))
+    if (CollisionManager::RectCollision(_Portal1->GetTransform(), 
+        _Player->GetTransform()) )
     {
         for (int i = 0; i < Key.MaxSize; ++i)
         {
             CursorManager::GetInstance()->WriteBuffer(Quest.VectorInfo.Position.x +
-                (Quest.Length / 2) - Key.Length, 35.0f + i, 
+                (Quest.Length / 2) - (Key.Length/2), 35.0f + i, 
                 Key.Buffer[i], Key.Color);
         }
     }
 
-    if (CollisionManager::RectCollision(_Player->GetTransform(), Store.VectorInfo
-        ))
+    if (CollisionManager::RectCollision(_Portal2->GetTransform(), 
+        _Player->GetTransform()) )
     {
         for (int i = 0; i < Key.MaxSize; ++i)
         {
             CursorManager::GetInstance()->WriteBuffer(Store.VectorInfo.Position.x +
-                (Store.Length / 2) - Key.Length, 45.0f - Key.MaxSize + i,
+                (Store.Length / 2) - (Key.Length / 2), 35.0f + i,
                 Key.Buffer[i], Key.Color);
         }
     }
     _Player->Render();
+
+    if (dwkey & KEY_E)
+    {
+        _Portal1->Render();
+        _Portal2->Render();
+    }
 }
 
 void Village::Release()
 {
     delete _Player;
     _Player = nullptr;
+
+    delete _Portal1;
+    _Portal1 = nullptr;
 }

@@ -2,6 +2,7 @@
 #include "Village.h"
 #include "Store.h"
 #include "Dungeon.h"
+#include "Guild.h"
 
 MapManager* MapManager::Instance = nullptr;
 
@@ -29,6 +30,9 @@ void MapManager::SetMap(MapID _MapID)
 		break;
 	case MapID::STORE:
 		//MapState = new Store;
+		break;
+	case MapID::GUILD:
+		MapState = new Guild;
 		break;
 	case MapID::DUNGEON:
 		//MapState = new Dungeon;

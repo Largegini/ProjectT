@@ -13,9 +13,11 @@ private:
 	RenderInfo Key;
 
 	DWORD dwkey;
-	char* Cursor;
 
 	Object* _Player;
+	Object* _Portal1;
+	Object* _Portal2;
+
 public:
 	virtual void Start()override;
 	virtual void Update()override;

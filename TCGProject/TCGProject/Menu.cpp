@@ -44,7 +44,7 @@ StartInfo.Buffer[5] = (char*)"`?888P'   `?8b  `?88P'`88bd88'       `?8b  ";
 
 StartInfo.Length = strlen("           d8P                        d8P  ");
 StartInfo.MaxSize = 6;
-StartInfo.Color = 7;
+StartInfo.Color =8;
 
 HTPInfo.Buffer[0] = (char*)" d8b                                                                d8b                     ";
 HTPInfo.Buffer[1] = (char*)" ?88                                    d8P                         88P                     ";
@@ -59,7 +59,7 @@ HTPInfo.Buffer[9] = (char*)"                                                    
 
 HTPInfo.Length = strlen(" d8b                                                                d8b                     ");
 HTPInfo.MaxSize = 10;
-HTPInfo.Color = 7;
+HTPInfo.Color = 8;
 
 ExitInfo.Buffer[0] = (char*)"                     d8,       ";
 ExitInfo.Buffer[1] = (char*)"                    `8P   d8P  ";
@@ -71,7 +71,7 @@ ExitInfo.Buffer[6] = (char*)"`?888P' d8P' `?8b d88'   `?8b  ";
 
 ExitInfo.Length = strlen(" d8888b ?88,  88P   88b  ?88'  ");
 ExitInfo.MaxSize = 7;
-ExitInfo.Color = 7;
+ExitInfo.Color = 8;
 
 Time = GetTickCount64();
 

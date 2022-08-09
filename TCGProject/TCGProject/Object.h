@@ -7,6 +7,8 @@ public:
 	virtual ~Object();
 protected:
 	Transform Info;
+
+	RenderInfo Texture;
 public:
 	virtual void Start()PURE;
 	virtual void Update()PURE;

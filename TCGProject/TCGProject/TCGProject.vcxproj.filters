@@ -76,8 +76,11 @@
     <Filter Include="소스 파일\99.Manager\CollisionManager">
       <UniqueIdentifier>{5ab33b61-6895-4053-9e1e-672b68fa5db0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\02.Object\Collider">
+    <Filter Include="소스 파일\02.Object\Portal">
       <UniqueIdentifier>{2f05dacf-aa6a-470b-8492-7080eba13ac2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\04.Map\Guild">
+      <UniqueIdentifier>{2308d54f-f778-4dc1-8d9f-20a3abfab954}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -132,8 +135,14 @@
     <ClCompile Include="Player.cpp">
       <Filter>소스 파일\02.Object\Player</Filter>
     </ClCompile>
-    <ClCompile Include="Colider.cpp">
-      <Filter>소스 파일\02.Object\Collider</Filter>
+    <ClCompile Include="Portal_01.cpp">
+      <Filter>소스 파일\02.Object\Portal</Filter>
+    </ClCompile>
+    <ClCompile Include="Portal_02.cpp">
+      <Filter>소스 파일\02.Object\Portal</Filter>
+    </ClCompile>
+    <ClCompile Include="Guild.cpp">
+      <Filter>소스 파일\04.Map\Guild</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -200,8 +209,14 @@
     <ClInclude Include="CollisionManager.h">
       <Filter>소스 파일\99.Manager\CollisionManager</Filter>
     </ClInclude>
-    <ClInclude Include="Colider.h">
-      <Filter>소스 파일\02.Object\Collider</Filter>
+    <ClInclude Include="Portal_01.h">
+      <Filter>소스 파일\02.Object\Portal</Filter>
+    </ClInclude>
+    <ClInclude Include="Portal_02.h">
+      <Filter>소스 파일\02.Object\Portal</Filter>
+    </ClInclude>
+    <ClInclude Include="Guild.h">
+      <Filter>소스 파일\04.Map\Guild</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

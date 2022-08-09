@@ -1,17 +1,16 @@
 #pragma once
-#include "Object.h"
-
-class Player: public Object
+#include "Map.h"
+class Guild : public Map
 {
 public:
-	Player();
-	virtual ~Player();
+	Guild();
+	virtual ~Guild();
 private:
-	DWORD dwkey;
+	RenderInfo Cat;
+	RenderInfo UI;
 public:
 	virtual void Start()override;
 	virtual void Update()override;
 	virtual void Render()override;
 	virtual void Release()override;
 };
-

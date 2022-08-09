@@ -1,17 +1,14 @@
 #pragma once
 #include "Object.h"
-
-class Player: public Object
+class Portal_02 :public Object
 {
 public:
-	Player();
-	virtual ~Player();
-private:
-	DWORD dwkey;
+	Portal_02();
+	virtual ~Portal_02();
+
 public:
 	virtual void Start()override;
 	virtual void Update()override;
 	virtual void Render()override;
 	virtual void Release()override;
 };
-

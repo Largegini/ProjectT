@@ -139,7 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Colider.cpp" />
+    <ClCompile Include="Guild.cpp" />
+    <ClCompile Include="Portal_01.cpp" />
     <ClCompile Include="CursorManager.cpp" />
     <ClCompile Include="Dungeon.cpp" />
     <ClCompile Include="HowtoPlay.cpp" />
@@ -152,6 +153,7 @@
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Portal_02.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Stage.cpp" />
@@ -159,7 +161,8 @@
     <ClCompile Include="Village.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Colider.h" />
+    <ClInclude Include="Guild.h" />
+    <ClInclude Include="Portal_01.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Constant.h" />
     <ClInclude Include="CursorManager.h" />
@@ -175,6 +178,7 @@
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Portal_02.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Stage.h" />

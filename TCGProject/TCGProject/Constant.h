@@ -6,3 +6,4 @@ const DWORD KEY_RIGHT = 8;
 const DWORD KEY_SPACE = 16;
 const DWORD KEY_RETURN = 32;
 const DWORD KEY_ESCAPE = 64;
+const DWORD KEY_E = 128;

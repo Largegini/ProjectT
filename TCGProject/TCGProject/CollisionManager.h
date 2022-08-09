@@ -11,10 +11,12 @@ public:
 
 		if (_Current.Position.x < TargetEndPoint.x &&
 			_Target.Position.x < CurrentEndPoint.x &&
-			(int)_Current.Position.y == (int)_Target.Position.y)
+			(int)CurrentEndPoint.y > (int)_Target.Position.y &&
+			(int)TargetEndPoint.y > (int)_Current.Position.y)
+		{
 			return true;
+		}
 
-		else
-			return false;
+		return false;
 	}
 };
