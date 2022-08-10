@@ -7,7 +7,11 @@ public:
 	virtual ~Guild();
 private:
 	RenderInfo Cat;
+	RenderInfo Cat2;
 	RenderInfo UI;
+
+	int CatAni;
+
 public:
 	virtual void Start()override;
 	virtual void Update()override;
