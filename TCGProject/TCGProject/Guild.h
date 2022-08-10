@@ -1,5 +1,6 @@
 #pragma once
 #include "Map.h"
+class BookAni;
 class Guild : public Map
 {
 public:
@@ -8,10 +9,10 @@ public:
 private:
 	RenderInfo Cat;
 	RenderInfo Cat2;
-	RenderInfo UI;
 
 	int CatAni;
 
+	BookAni* _BookAni;
 public:
 	virtual void Start()override;
 	virtual void Update()override;

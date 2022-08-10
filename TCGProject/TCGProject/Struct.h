@@ -26,7 +26,7 @@ struct RenderInfo
 	int MaxSize;
 	int Color;
 
-	char* Buffer[40];
+	char* Buffer[64];
 
 	Transform VectorInfo;
 };

@@ -1,12 +1,14 @@
 #include "Guild.h"
 #include "CursorManager.h"
+#include "BookAni.h"
 
-Guild::Guild() : CatAni(0)
+Guild::Guild() : CatAni(0), _BookAni(nullptr)
 {
 }
 
 Guild::~Guild()
 {
+	Release();
 }
 
 void Guild::Start()
@@ -37,32 +39,44 @@ void Guild::Start()
 	Cat2.MaxSize = 9;
 	Cat2.Color = 7;
 
-	UI.Buffer[0] = (char*)"";
-
+	_BookAni = new BookAni;
+	_BookAni->Start();
 }
 
 void Guild::Update()
 {
+	if (CatAni < 40)
+		CatAni++;
+	else
+		CatAni = 0;
+	
+	_BookAni->Update();
 }
 
 void Guild::Render()
 {
-	if(CatAni)
-
-	for (int i = 0; i < Cat2.MaxSize; ++i)
+	if (CatAni < 30)
 	{
-		CursorManager::GetInstance()->WriteBuffer(5.0f, 20.0f + i,
-			Cat2.Buffer[i], Cat2.Color);
+		for (int i = 0; i < Cat2.MaxSize; ++i)
+		{
+			CursorManager::GetInstance()->WriteBuffer(3.0f, 20.0f + i,
+				Cat2.Buffer[i], Cat2.Color);
+		}
 	}
 
-	for (int i = 0; i < Cat.MaxSize; ++i)
+	else if (CatAni <= 40)
 	{
-		CursorManager::GetInstance()->WriteBuffer(5.0f, 20.0f + i,
-			Cat.Buffer[i], Cat.Color);
+		for (int i = 0; i < Cat.MaxSize; ++i)
+		{
+			CursorManager::GetInstance()->WriteBuffer(3.0f, 20.0f + i,
+				Cat.Buffer[i], Cat.Color);
+		}
 	}
-
+	_BookAni->Render();
 }
 
 void Guild::Release()
 {
+	delete _BookAni;
+	_BookAni = nullptr;
 }

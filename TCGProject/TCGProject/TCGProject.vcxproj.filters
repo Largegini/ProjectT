@@ -82,6 +82,12 @@
     <Filter Include="소스 파일\04.Map\Guild">
       <UniqueIdentifier>{2308d54f-f778-4dc1-8d9f-20a3abfab954}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\05.Ani">
+      <UniqueIdentifier>{62d8ef26-d840-4d65-a3c3-4c5f5e4c8426}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\05.Ani\BookAni">
+      <UniqueIdentifier>{f92bef43-bf0c-4d02-9ab6-96e32d99b473}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -143,6 +149,9 @@
     </ClCompile>
     <ClCompile Include="Guild.cpp">
       <Filter>소스 파일\04.Map\Guild</Filter>
+    </ClCompile>
+    <ClCompile Include="BookAni.cpp">
+      <Filter>소스 파일\05.Ani\BookAni</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -217,6 +226,9 @@
     </ClInclude>
     <ClInclude Include="Guild.h">
       <Filter>소스 파일\04.Map\Guild</Filter>
+    </ClInclude>
+    <ClInclude Include="BookAni.h">
+      <Filter>소스 파일\05.Ani\BookAni</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

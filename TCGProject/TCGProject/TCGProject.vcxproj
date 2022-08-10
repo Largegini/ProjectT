@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BookAni.cpp" />
     <ClCompile Include="Guild.cpp" />
     <ClCompile Include="Portal_01.cpp" />
     <ClCompile Include="CursorManager.cpp" />
@@ -161,6 +162,7 @@
     <ClCompile Include="Village.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BookAni.h" />
     <ClInclude Include="Guild.h" />
     <ClInclude Include="Portal_01.h" />
     <ClInclude Include="CollisionManager.h" />
