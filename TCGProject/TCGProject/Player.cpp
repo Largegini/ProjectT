@@ -31,9 +31,15 @@ void Player::Update()
 	dwkey = InputManager::GetInstance()->GetKey();
 
 	if (dwkey & KEY_LEFT)
-		Info.Position.x--;
+	{
+		if (Info.Position.x > 0)
+			Info.Position.x -= 2;
+	}
 	if (dwkey & KEY_RIGHT)
-		Info.Position.x++;
+	{
+		if (Info.Position.x < 150)
+			Info.Position.x += 2;
+	}
 }
 
 void Player::Render()

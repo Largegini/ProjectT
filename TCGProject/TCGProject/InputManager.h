@@ -17,6 +17,9 @@ public:
 	~InputManager();
 private:
 	DWORD dwkey;
+
+	// 키입력여부 체크
+	bool Check;
 public:
 	void CheckKey();
 	DWORD GetKey() { return dwkey; }

@@ -132,7 +132,7 @@
     <ClCompile Include="MapManager.cpp">
       <Filter>소스 파일\99.Manager\MapManager</Filter>
     </ClCompile>
-    <ClCompile Include="Dungeon.cpp">
+    <ClCompile Include="Dungeon1.cpp">
       <Filter>소스 파일\04.Map\Dungeon</Filter>
     </ClCompile>
     <ClCompile Include="Map.cpp">
@@ -152,6 +152,18 @@
     </ClCompile>
     <ClCompile Include="BookAni.cpp">
       <Filter>소스 파일\05.Ani\BookAni</Filter>
+    </ClCompile>
+    <ClCompile Include="Dungeon2.cpp">
+      <Filter>소스 파일\04.Map\Dungeon</Filter>
+    </ClCompile>
+    <ClCompile Include="Dungeon3.cpp">
+      <Filter>소스 파일\04.Map\Dungeon</Filter>
+    </ClCompile>
+    <ClCompile Include="Dungeon4.cpp">
+      <Filter>소스 파일\04.Map\Dungeon</Filter>
+    </ClCompile>
+    <ClCompile Include="Dungeon5.cpp">
+      <Filter>소스 파일\04.Map\Dungeon</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -188,7 +200,7 @@
     <ClInclude Include="HowtoPlay.h">
       <Filter>소스 파일\03.UI\MenuUI\HowtoPlay</Filter>
     </ClInclude>
-    <ClInclude Include="Dungeon.h">
+    <ClInclude Include="Dungeon1.h">
       <Filter>소스 파일\04.Map\Dungeon</Filter>
     </ClInclude>
     <ClInclude Include="Village.h">
@@ -229,6 +241,18 @@
     </ClInclude>
     <ClInclude Include="BookAni.h">
       <Filter>소스 파일\05.Ani\BookAni</Filter>
+    </ClInclude>
+    <ClInclude Include="Dungeon2.h">
+      <Filter>소스 파일\04.Map\Dungeon</Filter>
+    </ClInclude>
+    <ClInclude Include="Dungeon3.h">
+      <Filter>소스 파일\04.Map\Dungeon</Filter>
+    </ClInclude>
+    <ClInclude Include="Dungeon4.h">
+      <Filter>소스 파일\04.Map\Dungeon</Filter>
+    </ClInclude>
+    <ClInclude Include="Dungeon5.h">
+      <Filter>소스 파일\04.Map\Dungeon</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

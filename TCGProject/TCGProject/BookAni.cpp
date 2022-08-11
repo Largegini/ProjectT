@@ -1,7 +1,9 @@
 #include "BookAni.h"
 #include "CursorManager.h"
+#include "InputManager.h"
+#include "MapManager.h"
 
-BookAni::BookAni() : Index(0)
+BookAni::BookAni() : Index(0), delay(0), dwkey(0), CursorPos(0)
 {
 }
 
@@ -143,16 +145,72 @@ void BookAni::Start()
     OpenBook.MaxSize = 35;
     OpenBook.Color = 7;
     OpenBook.VectorInfo.Position = Vector3(30.0f, 15.0f);
+
+    Cursor.Buffer[0] = (char*)"===¢º";
+    Cursor.Buffer[1] = (char*)"                   ==================";
+    Cursor.Length = strlen("===¢º");
+    Cursor.MaxSize = 2;
+    Cursor.Color = 12;
+    Cursor.VectorInfo.Position = Vector3(97.0f, 0.0f);
+    
+
 }
 
 void BookAni::Update()
 {
+    dwkey = InputManager::GetInstance()->GetKey();
+
     if (Book.VectorInfo.Position.x + Book.Length < 146)
         Book.VectorInfo.Position.x += 2;
 
-    else if (Book.VectorInfo.Position.x + Book.Length > 145)
+    else if (Book.VectorInfo.Position.x + Book.Length > 145 && delay < 8)
     {
         Index = 1;
+        delay++;
+    }
+
+    else if (delay >= 8)
+    {
+        Index = 2;
+    }
+
+    if (Index == 2)
+    {
+        if (dwkey & KEY_UP)
+        {
+            if (CursorPos > 0)
+                CursorPos--;
+        }
+
+        if (dwkey & KEY_RETURN)
+        {
+            switch (CursorPos)
+            {
+            case 0:
+                MapManager::GetInstance()->SetMap(MapID::DUNGEON1);
+                break;
+            case 1:
+                MapManager::GetInstance()->SetMap(MapID::DUNGEON2);
+                break;
+            case 2:
+                MapManager::GetInstance()->SetMap(MapID::DUNGEON3);
+                break;
+            case 3:
+                MapManager::GetInstance()->SetMap(MapID::DUNGEON4);
+                break;
+            case 4:
+                MapManager::GetInstance()->SetMap(MapID::DUNGEON5);
+                break;
+            default:
+                break;
+            } 
+        }
+
+        if (dwkey & KEY_DOWN)
+        {
+            if (CursorPos < 4)
+                CursorPos++;
+        }
     }
 }
 
@@ -160,38 +218,78 @@ void BookAni::Render()
 {
     switch (Index)
     {
-    case 0:
-        {
-            for (int i = 0; i < Book.MaxSize; ++i)
+        case 0:
             {
-                CursorManager::GetInstance()->WriteBuffer(Book.VectorInfo.Position.x,
-                    Book.VectorInfo.Position.y + i, Book.Buffer[i], Book.Color);
+                for (int i = 0; i < Book.MaxSize; ++i)
+                {
+                    CursorManager::GetInstance()->WriteBuffer(Book.VectorInfo.Position.x,
+                        Book.VectorInfo.Position.y + i, Book.Buffer[i], Book.Color);
+                }
+                 break;
             }
-             break;
-        }
-    case 1:
-    {
-        for (int i = 0; i < Book2.MaxSize; ++i)
-        {
-            CursorManager::GetInstance()->WriteBuffer(Book2.VectorInfo.Position.x,
-                Book2.VectorInfo.Position.y + i, Book2.Buffer[i], Book2.Color);
-        }
-        break;
+        case 1:
+            {
+                for (int i = 0; i < Book2.MaxSize; ++i)
+                {
+                    CursorManager::GetInstance()->WriteBuffer(Book.VectorInfo.Position.x,
+                        Book2.VectorInfo.Position.y + i, Book2.Buffer[i], Book2.Color);
+                }
+                break;
+            }
+        case 2:
+            {
+                for (int i = 0; i < OpenBook.MaxSize; ++i)
+                {
+                    CursorManager::GetInstance()->WriteBuffer(OpenBook.VectorInfo.Position.x,
+                        OpenBook.VectorInfo.Position.y + i, OpenBook.Buffer[i], OpenBook.Color);
+                }
+                break;
+            }
     }
-    case 2:
+
+    if (Index == 2)
+    {
+        switch (CursorPos)
         {
-            for (int i = 0; i < OpenBook.MaxSize; ++i)
+        case 0:
+            for (int i=0; i < Cursor.MaxSize; ++i)
             {
-                CursorManager::GetInstance()->WriteBuffer(OpenBook.VectorInfo.Position.x,
-                    OpenBook.VectorInfo.Position.y + i, OpenBook.Buffer[i], OpenBook.Color);
+                CursorManager::GetInstance()->WriteBuffer(Cursor.VectorInfo.Position.x - Cursor.Length,
+                    24.0f+i, Cursor.Buffer[i], Cursor.Color);
             }
+            break;
+        case 1:
+            for (int i=0; i < Cursor.MaxSize; ++i)
+            {
+                CursorManager::GetInstance()->WriteBuffer(Cursor.VectorInfo.Position.x - Cursor.Length,
+                    28.0f+i, Cursor.Buffer[i], Cursor.Color);
+            }
+                break;
+        case 2:
+            for (int i=0; i < Cursor.MaxSize; ++i)
+            {
+                CursorManager::GetInstance()->WriteBuffer(Cursor.VectorInfo.Position.x - Cursor.Length,
+                    33.0f+i, Cursor.Buffer[i], Cursor.Color);
+            }
+                break;
+        case 3:
+            for (int i=0; i < Cursor.MaxSize; ++i)
+            {
+                CursorManager::GetInstance()->WriteBuffer(Cursor.VectorInfo.Position.x - Cursor.Length,
+                    38.0f+i, Cursor.Buffer[i], Cursor.Color);
+            }
+                break;
+        case 4:
+            for (int i=0; i < Cursor.MaxSize; ++i)
+            {
+                CursorManager::GetInstance()->WriteBuffer(Cursor.VectorInfo.Position.x - Cursor.Length,
+                    43.0f+i, Cursor.Buffer[i], Cursor.Color);
+            }
+                break;
+        default:
             break;
         }
     }
-    
-
-   
-    
 }
 
 void BookAni::Release()

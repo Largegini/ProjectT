@@ -140,10 +140,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BookAni.cpp" />
+    <ClCompile Include="Dungeon2.cpp" />
+    <ClCompile Include="Dungeon3.cpp" />
+    <ClCompile Include="Dungeon4.cpp" />
+    <ClCompile Include="Dungeon5.cpp" />
     <ClCompile Include="Guild.cpp" />
     <ClCompile Include="Portal_01.cpp" />
     <ClCompile Include="CursorManager.cpp" />
-    <ClCompile Include="Dungeon.cpp" />
+    <ClCompile Include="Dungeon1.cpp" />
     <ClCompile Include="HowtoPlay.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Logo.cpp" />
@@ -163,12 +167,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BookAni.h" />
+    <ClInclude Include="Dungeon2.h" />
+    <ClInclude Include="Dungeon3.h" />
+    <ClInclude Include="Dungeon4.h" />
+    <ClInclude Include="Dungeon5.h" />
     <ClInclude Include="Guild.h" />
     <ClInclude Include="Portal_01.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Constant.h" />
     <ClInclude Include="CursorManager.h" />
-    <ClInclude Include="Dungeon.h" />
+    <ClInclude Include="Dungeon1.h" />
     <ClInclude Include="Enum.h" />
     <ClInclude Include="Headers.h" />
     <ClInclude Include="HowtoPlay.h" />
