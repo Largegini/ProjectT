@@ -88,6 +88,24 @@
     <Filter Include="소스 파일\05.Ani\BookAni">
       <UniqueIdentifier>{f92bef43-bf0c-4d02-9ab6-96e32d99b473}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\05.Ani\QuestStart">
+      <UniqueIdentifier>{4b7ff217-4b22-4b46-8c21-c2bfaa96068a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.Object\Enemy">
+      <UniqueIdentifier>{4e580f26-f125-4774-a92e-905c604b63f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.UI\StageUI">
+      <UniqueIdentifier>{71850ad4-70f6-4149-9e65-8225ee410628}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.UI\StageUI\DungeonMap">
+      <UniqueIdentifier>{397bb05d-3305-4084-9562-152eef598bfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.Object\Room">
+      <UniqueIdentifier>{e93043da-dcb6-4e2e-92af-0440b331da19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\05.Ani\Outro">
+      <UniqueIdentifier>{85186a41-578d-4fb0-95c2-b12b5c67283f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -164,6 +182,21 @@
     </ClCompile>
     <ClCompile Include="Dungeon5.cpp">
       <Filter>소스 파일\04.Map\Dungeon</Filter>
+    </ClCompile>
+    <ClCompile Include="QuestStart.cpp">
+      <Filter>소스 파일\05.Ani\QuestStart</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>소스 파일\02.Object\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="DungeonMap.cpp">
+      <Filter>소스 파일\03.UI\StageUI\DungeonMap</Filter>
+    </ClCompile>
+    <ClCompile Include="Room.cpp">
+      <Filter>소스 파일\02.Object\Room</Filter>
+    </ClCompile>
+    <ClCompile Include="Outro.cpp">
+      <Filter>소스 파일\05.Ani\Outro</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -253,6 +286,21 @@
     </ClInclude>
     <ClInclude Include="Dungeon5.h">
       <Filter>소스 파일\04.Map\Dungeon</Filter>
+    </ClInclude>
+    <ClInclude Include="QuestStart.h">
+      <Filter>소스 파일\05.Ani\QuestStart</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>소스 파일\02.Object\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="DungeonMap.h">
+      <Filter>소스 파일\03.UI\StageUI\DungeonMap</Filter>
+    </ClInclude>
+    <ClInclude Include="Room.h">
+      <Filter>소스 파일\02.Object\Room</Filter>
+    </ClInclude>
+    <ClInclude Include="Outro.h">
+      <Filter>소스 파일\05.Ani\Outro</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -37,7 +37,7 @@ void Player::Update()
 	}
 	if (dwkey & KEY_RIGHT)
 	{
-		if (Info.Position.x < 150)
+		if (Info.Position.x+Info.Scale.x < 150)
 			Info.Position.x += 2;
 	}
 }
@@ -54,3 +54,4 @@ void Player::Render()
 void Player::Release()
 {
 }
+

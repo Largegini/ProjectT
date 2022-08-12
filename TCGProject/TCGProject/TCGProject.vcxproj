@@ -144,7 +144,10 @@
     <ClCompile Include="Dungeon3.cpp" />
     <ClCompile Include="Dungeon4.cpp" />
     <ClCompile Include="Dungeon5.cpp" />
+    <ClCompile Include="DungeonMap.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Guild.cpp" />
+    <ClCompile Include="Outro.cpp" />
     <ClCompile Include="Portal_01.cpp" />
     <ClCompile Include="CursorManager.cpp" />
     <ClCompile Include="Dungeon1.cpp" />
@@ -159,6 +162,8 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Portal_02.cpp" />
+    <ClCompile Include="QuestStart.cpp" />
+    <ClCompile Include="Room.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Stage.cpp" />
@@ -171,7 +176,10 @@
     <ClInclude Include="Dungeon3.h" />
     <ClInclude Include="Dungeon4.h" />
     <ClInclude Include="Dungeon5.h" />
+    <ClInclude Include="DungeonMap.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Guild.h" />
+    <ClInclude Include="Outro.h" />
     <ClInclude Include="Portal_01.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Constant.h" />
@@ -189,6 +197,8 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Portal_02.h" />
+    <ClInclude Include="QuestStart.h" />
+    <ClInclude Include="Room.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Stage.h" />

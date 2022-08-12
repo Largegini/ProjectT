@@ -161,7 +161,7 @@ void BookAni::Update()
     dwkey = InputManager::GetInstance()->GetKey();
 
     if (Book.VectorInfo.Position.x + Book.Length < 146)
-        Book.VectorInfo.Position.x += 2;
+        Book.VectorInfo.Position.x += 4;
 
     else if (Book.VectorInfo.Position.x + Book.Length > 145 && delay < 8)
     {
@@ -190,16 +190,17 @@ void BookAni::Update()
                 MapManager::GetInstance()->SetMap(MapID::DUNGEON1);
                 break;
             case 1:
-                MapManager::GetInstance()->SetMap(MapID::DUNGEON2);
+
+                //MapManager::GetInstance()->SetMap(MapID::DUNGEON2);
                 break;
             case 2:
-                MapManager::GetInstance()->SetMap(MapID::DUNGEON3);
+               // MapManager::GetInstance()->SetMap(MapID::DUNGEON3);
                 break;
             case 3:
-                MapManager::GetInstance()->SetMap(MapID::DUNGEON4);
+                //MapManager::GetInstance()->SetMap(MapID::DUNGEON4);
                 break;
             case 4:
-                MapManager::GetInstance()->SetMap(MapID::DUNGEON5);
+                //MapManager::GetInstance()->SetMap(MapID::DUNGEON5);
                 break;
             default:
                 break;
