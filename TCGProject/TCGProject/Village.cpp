@@ -1,11 +1,11 @@
 #include "Village.h"
 #include "InputManager.h"
 #include "CursorManager.h"
-#include "Player.h"
 #include "CollisionManager.h"
+#include "ObjectFactory.h"
+#include "Player.h"
 #include "MapManager.h"
 #include "Portal_01.h"
-#include "Portal_02.h"
 
 Village::Village(): dwkey(0), _Player(nullptr), _Portal1(nullptr), _Portal2(nullptr)
 {
@@ -93,14 +93,11 @@ void Village::Start()
     Key.MaxSize = 4;
     Key.Color = 8;
 
-    _Player = new Player;
-    _Player->Start();
+    _Player = ObjectFactory::CreatePlayer();
 
-    _Portal1 = new Portal_01;
-    _Portal1->Start();
+    _Portal1 = ObjectFactory::CreatePortal();
 
-    _Portal2 = new Portal_02;
-    _Portal2->Start();
+    _Portal2 = ObjectFactory::CreatePortal(106.0f,40.0f);
 }
 
 void Village::Update()

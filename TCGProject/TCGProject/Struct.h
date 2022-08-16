@@ -18,6 +18,7 @@ struct Transform
 	Vector3 Position;
 	Vector3 Rotation;
 	Vector3 Scale;
+	Vector3 Direction;
 };
 
 struct RenderInfo
@@ -29,4 +30,9 @@ struct RenderInfo
 	char* Buffer[64];
 
 	Transform VectorInfo;
+};
+
+struct Status
+{
+
 };

@@ -106,6 +106,18 @@
     <Filter Include="소스 파일\05.Ani\Outro">
       <UniqueIdentifier>{85186a41-578d-4fb0-95c2-b12b5c67283f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\98.Factory">
+      <UniqueIdentifier>{135f11b5-32b2-4b3e-b86b-b064578a1737}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\98.Factory\ObjectFactory">
+      <UniqueIdentifier>{03eeebd1-b5e8-48eb-a5bb-9ff4652ce4f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\99.Manager\ObjectManager">
+      <UniqueIdentifier>{004ae2db-fdbc-4b2d-9430-124c6907ca1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.Scene\Battle">
+      <UniqueIdentifier>{5f0555f5-ab18-49c3-b97e-2df2612639d9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -162,9 +174,6 @@
     <ClCompile Include="Portal_01.cpp">
       <Filter>소스 파일\02.Object\Portal</Filter>
     </ClCompile>
-    <ClCompile Include="Portal_02.cpp">
-      <Filter>소스 파일\02.Object\Portal</Filter>
-    </ClCompile>
     <ClCompile Include="Guild.cpp">
       <Filter>소스 파일\04.Map\Guild</Filter>
     </ClCompile>
@@ -197,6 +206,12 @@
     </ClCompile>
     <ClCompile Include="Outro.cpp">
       <Filter>소스 파일\05.Ani\Outro</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>소스 파일\99.Manager\ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Battle.cpp">
+      <Filter>소스 파일\01.Scene\Battle</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -266,9 +281,6 @@
     <ClInclude Include="Portal_01.h">
       <Filter>소스 파일\02.Object\Portal</Filter>
     </ClInclude>
-    <ClInclude Include="Portal_02.h">
-      <Filter>소스 파일\02.Object\Portal</Filter>
-    </ClInclude>
     <ClInclude Include="Guild.h">
       <Filter>소스 파일\04.Map\Guild</Filter>
     </ClInclude>
@@ -301,6 +313,15 @@
     </ClInclude>
     <ClInclude Include="Outro.h">
       <Filter>소스 파일\05.Ani\Outro</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectFactory.h">
+      <Filter>소스 파일\98.Factory\ObjectFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>소스 파일\99.Manager\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Battle.h">
+      <Filter>소스 파일\01.Scene\Battle</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

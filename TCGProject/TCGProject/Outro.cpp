@@ -18,7 +18,7 @@ Texture.Buffer[2] = (char*)"88    88 88    88 88ooooo `8bo.      88         8P  
 Texture.Buffer[3] = (char*)"88    88 88    88 88~~~~~   `Y8b.    88         8b      88      88~~~~~ 88~~~88 88`8b         ";
 Texture.Buffer[4] = (char*)"`8P  d8' 88b  d88 88.     db   8D    88         Y8b  d8 88booo. 88.     88   88 88 `88. db db ";
 Texture.Buffer[5] = (char*)" `Y88'Y8 ~Y8888P' Y88888P `8888Y'    YP          `Y88P' Y88888P Y88888P YP   YP 88   YD YP YP ";
-Texture.Length = strlen("88    88 88    88 88ooooo `8bo.      88         8P      88      88ooooo 88ooo88 88oobY' YP YP ");
+Texture.Length =    strlen("88    88 88    88 88ooooo `8bo.      88         8P      88      88ooooo 88ooo88 88oobY' YP YP ");
 Texture.MaxSize = 6;
 Texture.Color = 14;
 
@@ -28,7 +28,7 @@ void Outro::Update()
 {
 	Time++;
 
-	if (Time < 20)
+	if (Time > 20)
 		Check = false;
 }
 
@@ -36,7 +36,7 @@ void Outro::Render()
 {
 	for (int i = 0; i < Texture.MaxSize; ++i)
 	{
-		CursorManager::GetInstance()->WriteBuffer(75 - (Texture.Length), 15.0f,
+		CursorManager::GetInstance()->WriteBuffer(75 - (Texture.Length/2), 15.0f+i,
 			Texture.Buffer[i], Texture.Color);
 	}
 }

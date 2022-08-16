@@ -7,8 +7,10 @@ public:
 	virtual ~Object();
 protected:
 	Transform Info;
-
 	RenderInfo Texture;
+
+
+
 public:
 	virtual void Start()PURE;
 	virtual void Update()PURE;
@@ -17,5 +19,6 @@ public:
 public:
 	Transform GetTransform() const { return Info; }
 	void SetPosition(float _x, float _y) { Info.Position = Vector3(_x, _y); }
+	void SetPosition(Vector3 _Position) { Info.Position = Vector3(_Position); }
 };
 

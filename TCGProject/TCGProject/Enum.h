@@ -1,7 +1,7 @@
 #pragma once
 enum class SceneID
 {
-	LOGO, MENU, STAGE, EXIT
+	LOGO, MENU, STAGE, BATTLE, EXIT
 };
 
 enum class MapID

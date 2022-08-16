@@ -1,16 +1,22 @@
 #include "Dungeon1.h"
 #include "MapManager.h"
 #include "CursorManager.h"
+#include "SceneManager.h"
 #include "CollisionManager.h"
 #include "InputManager.h"
+#include "ObjectFactory.h"
 #include "QuestStart.h"
 #include "Player.h"
 #include "Portal_01.h"
 #include "Outro.h"
 
 Dungeon1::Dungeon1() : _Intro(1), dwkey(0), _COutro(true), GetTarget(false),
-Intro(nullptr), _Player(nullptr),Target(nullptr)
+Intro(nullptr), _Outro(nullptr), _Player(nullptr),Target(nullptr)
 {
+	for (int i = 0; i < 4; ++i)
+	{
+		_Enemy[i] = nullptr;
+	}
 }
 
 Dungeon1::~Dungeon1()
@@ -22,8 +28,12 @@ void Dungeon1::Start()
 {
 	Intro = new QuestStart;
 	_Outro = new Outro;
-	_Player = new Player;
-	Target = new Portal_01;
+	_Player = ObjectFactory::CreatePlayer(0.0f, 16.0f);
+	for (int i = 0; i < 4; ++i)
+	{
+		_Enemy[i] = ObjectFactory::CreateEnemy(30.0f * (i + 1), 17.0f);
+	}
+	Target = ObjectFactory::CreatePortal(135.0f, 15.0f);
 
 	Ground.Buffer[0] = (char*)"-----------------------------------------------------------------------------------------------------------------------------------------------------";
 
@@ -34,14 +44,8 @@ void Dungeon1::Start()
 	Ground.VectorInfo.Rotation = Vector3(0.0f, 0.0f);
 	Ground.VectorInfo.Scale = Vector3(0.0f, 0.0f);
 
-	if (_Intro == 1)
-		Intro->Start();
-
-	_Player->Start();
-	_Player->SetPosition(0.0f, 16.0f);
-
-	Target->Start();
-	Target->SetPosition(135.0f, 15.0f);
+	Intro->Start();
+	_Outro->Start();
 }
 
 void Dungeon1::Update()
@@ -53,6 +57,8 @@ void Dungeon1::Update()
 
 	if (_Intro == 1)
 		Intro->Update();
+	if(GetTarget)
+		_Outro->Update();
 
 	_Player->Update();
 
@@ -71,10 +77,16 @@ void Dungeon1::Render()
 {
 	if (_Intro == 1)
 		Intro->Render();
+
 	else if (!GetTarget)
 	{
 		_Player->Render();
 		Target->Render();
+
+		for (int i = 0; i < 4; ++i)
+		{
+			_Enemy[i]->Render();
+		}
 
 		for (int i = 0; i < Ground.MaxSize; ++i)
 		{
@@ -91,6 +103,15 @@ void Dungeon1::Render()
 	{
 		CursorManager::GetInstance()->WriteBuffer(73.0f, 0.0f ,
 			(char*)"Ãæµ¹", Ground.Color);
+	}
+
+	for (int i = 0; i < 4; ++i)
+	{
+		if (CollisionManager::RectCollision(_Enemy[i]->GetTransform(),
+			_Player->GetTransform()))
+		{
+		  SceneManager::GetInstance()->SetScene(SceneID::)
+		}
 	}
 }
 
