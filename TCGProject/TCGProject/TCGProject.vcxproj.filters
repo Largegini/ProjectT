@@ -118,6 +118,9 @@
     <Filter Include="소스 파일\01.Scene\Battle">
       <UniqueIdentifier>{5f0555f5-ab18-49c3-b97e-2df2612639d9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\node">
+      <UniqueIdentifier>{1106d336-0bcd-414e-9eb3-e34f9580b997}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">

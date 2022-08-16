@@ -110,7 +110,7 @@ void Dungeon1::Render()
 		if (CollisionManager::RectCollision(_Enemy[i]->GetTransform(),
 			_Player->GetTransform()))
 		{
-		  SceneManager::GetInstance()->SetScene(SceneID::)
+			SceneManager::GetInstance()->SetScene(SceneID::BATTLE);
 		}
 	}
 }
