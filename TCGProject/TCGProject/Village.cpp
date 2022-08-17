@@ -93,11 +93,11 @@ void Village::Start()
     Key.MaxSize = 4;
     Key.Color = 8;
 
-    _Player = ObjectFactory::CreatePlayer();
+    _Player = ObjectFactory<Player>::CreateObject();
 
-    _Portal1 = ObjectFactory::CreatePortal();
+    _Portal1 = ObjectFactory<Portal_01>::CreateObject();
 
-    _Portal2 = ObjectFactory::CreatePortal(106.0f,40.0f);
+    _Portal2 = ObjectFactory<Portal_01>::CreateObject(106.0f,40.0f);
 }
 
 void Village::Update()

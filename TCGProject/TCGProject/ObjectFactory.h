@@ -4,75 +4,36 @@
 #include "Enemy.h"
 #include "Portal_01.h"
 
+template <typename T>
 class ObjectFactory
 {
 public:
-	static Object* CreatePlayer()
+	static Object* CreateObject()
 	{
-		Object* pObject = new Player;
+		Object* pObject = new T;
 		pObject->Start();
 
 		return pObject;
 	}
 
-	static Object* CreatePlayer(float _x, float _y)
+	static Object* CreateObject(float _x, float _y)
 	{
-		Object* pObject = new Player;
+		Object* pObject = new T;
 		pObject->Start();
 		pObject->SetPosition(_x, _y);
 
 		return pObject;
 	}
 
-	static Object* CreatePortal()
+	
+	static Object* CreateObject(Vector3 _Position)
 	{
-		Object* pObject = new Portal_01;
-		pObject->Start();
-
-		return pObject;
-	}
-
-	static Object* CreatePortal(Vector3 _Position)
-	{
-		Object* pObject = new Portal_01;
+		Object* pObject = new T;
 		pObject->Start();
 		pObject->SetPosition(_Position);
 
 		return pObject;
 	}
 
-	static Object* CreatePortal(float _x, float _y)
-	{
-		Object* pObject = new Portal_01;
-		pObject->Start();
-		pObject->SetPosition(_x, _y);
-
-		return pObject;
-	}
-
-	static Object* CreateEnemy()
-	{
-		Object* pObject = new Enemy;
-		pObject->Start();
-
-		return pObject;
-	}
-
-	static Object* CreateEnemy(float _x, float _y)
-	{
-		Object* pObject = new Enemy;
-		pObject->Start();
-		pObject->SetPosition(_x, _y);
-
-		return pObject;
-	}
-
-	static Object* CreateEnemy(Vector3 _Position)
-	{
-		Object* pObject = new Enemy;
-		pObject->Start();
-		pObject->SetPosition(_Position);
-
-		return pObject;
-	}
+	
 };

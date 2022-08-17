@@ -16,11 +16,11 @@ Battle::~Battle()
 
 void Battle::Start()
 {
-	pPlayer = ObjectFactory::CreatePlayer(30.0f, 30.0f);
+	pPlayer = ObjectFactory<Player>::CreateObject(30.0f, 30.0f);
 
 	for (int i = 0; i < 4; ++i)
 	{
-		pEnemy[i] = ObjectFactory::CreateEnemy(100.0f+(i*15.0f), 20.0f+ (i*5.0f));
+		pEnemy[i] = ObjectFactory<Enemy>::CreateObject(100.0f+(i*15.0f), 20.0f+ (i*5.0f));
 	}
 
 

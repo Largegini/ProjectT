@@ -18,9 +18,9 @@ void ObjectManager::CreateObject(int StateIndex)
 
 void ObjectManager::Start()
 {
-	pPlayer = ObjectFactory::CreatePlayer();
+	pPlayer = ObjectFactory<Player>::CreateObject();
 
-	pEnemy = ObjectFactory::CreateEnemy();
+	pEnemy = ObjectFactory<Enemy>::CreateObject();
 }
 
 void ObjectManager::Update()

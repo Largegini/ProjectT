@@ -28,12 +28,12 @@ void Dungeon1::Start()
 {
 	Intro = new QuestStart;
 	_Outro = new Outro;
-	_Player = ObjectFactory::CreatePlayer(0.0f, 16.0f);
+	_Player = ObjectFactory<Player>::CreateObject(0.0f, 16.0f);
 	for (int i = 0; i < 4; ++i)
 	{
-		_Enemy[i] = ObjectFactory::CreateEnemy(30.0f * (i + 1), 17.0f);
+		_Enemy[i] = ObjectFactory<Enemy>::CreateObject(30.0f * (i + 1), 17.0f);
 	}
-	Target = ObjectFactory::CreatePortal(135.0f, 15.0f);
+	Target = ObjectFactory<Portal_01>::CreateObject(135.0f, 15.0f);
 
 	Ground.Buffer[0] = (char*)"-----------------------------------------------------------------------------------------------------------------------------------------------------";
 
