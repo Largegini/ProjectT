@@ -7,8 +7,11 @@
 #include "ObjectFactory.h"
 #include "QuestStart.h"
 #include "Player.h"
+#include "Bullet.h"
 #include "Portal_01.h"
 #include "Outro.h"
+#include "ObjectFactory.h"
+#include "ObjectManager.h"
 
 Dungeon1::Dungeon1() : _Intro(1), dwkey(0), _COutro(true), GetTarget(false),
 Intro(nullptr), _Outro(nullptr), _Player(nullptr),Target(nullptr)
@@ -26,9 +29,15 @@ Dungeon1::~Dungeon1()
 
 void Dungeon1::Start()
 {
+	ObjectManager::GetInstance()->SetPlayer(
+		ObjectFactory<Player>::CreateObject(0.0f, 16.0f)
+	);
+
+	_Player = ObjectManager::GetInstance()->GetPlayer();
+
 	Intro = new QuestStart;
 	_Outro = new Outro;
-	_Player = ObjectFactory<Player>::CreateObject(0.0f, 16.0f);
+	//_Player = ObjectFactory<Player>::CreateObject(0.0f, 16.0f);
 	for (int i = 0; i < 4; ++i)
 	{
 		_Enemy[i] = ObjectFactory<Enemy>::CreateObject(30.0f * (i + 1), 17.0f);
@@ -51,6 +60,16 @@ void Dungeon1::Start()
 void Dungeon1::Update()
 {
 	dwkey = InputManager::GetInstance()->GetKey();
+
+	if (GetAsyncKeyState(VK_TAB))
+	{
+		Object* pBullet = ObjectFactory<Bullet>::CreateObject();
+		((Bullet*)pBullet)->SetIndex(0);
+
+
+
+		ObjectManager::GetInstance()->AddObject(pBullet);
+	}
 
 	_Intro = Intro->GetCheck();
 	_COutro = _Outro->GetCheck();

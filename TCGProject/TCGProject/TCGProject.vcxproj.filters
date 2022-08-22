@@ -121,6 +121,12 @@
     <Filter Include="소스 파일\node">
       <UniqueIdentifier>{1106d336-0bcd-414e-9eb3-e34f9580b997}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\02.Object\Bullet">
+      <UniqueIdentifier>{19c0730f-a2c1-4cde-8cee-470257873acb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\99.Manager\MathManager">
+      <UniqueIdentifier>{4de82b45-9828-4215-8b01-9548ef29dfe3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -215,6 +221,9 @@
     </ClCompile>
     <ClCompile Include="Battle.cpp">
       <Filter>소스 파일\01.Scene\Battle</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>소스 파일\02.Object\Bullet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -325,6 +334,12 @@
     </ClInclude>
     <ClInclude Include="Battle.h">
       <Filter>소스 파일\01.Scene\Battle</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>소스 파일\02.Object\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="MathManager.h">
+      <Filter>소스 파일\99.Manager\MathManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -18,11 +18,15 @@ private:
 public:
 	~ObjectManager();
 private:
+	map<string, list<Object*>> ObjectList;
 	Object* pPlayer;
-	Object* pEnemy;
 public:
-	void CreateObject(int StateIndex);
-	void Start();
+	void AddObject(Object* _Object);
+
+	void SetPlayer(Object* _Object) { pPlayer = _Object; }
+
+	Object* GetPlayer() const { return pPlayer; }
+
 	void Update();
 	void Render();
 	void Release();

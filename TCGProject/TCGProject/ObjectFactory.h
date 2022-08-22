@@ -25,7 +25,6 @@ public:
 		return pObject;
 	}
 
-	
 	static Object* CreateObject(Vector3 _Position)
 	{
 		Object* pObject = new T;
@@ -34,6 +33,4 @@ public:
 
 		return pObject;
 	}
-
-	
 };

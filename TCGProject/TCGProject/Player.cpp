@@ -12,6 +12,8 @@ Player::~Player()
 
 void Player::Start()
 {
+	Key = "Player";
+
 	Texture.Buffer[0] = (char*)" ¡Û ";
 	Texture.Buffer[1] = (char*)"|¦¢|";
 	Texture.Buffer[2] = (char*)" ¤µ ";

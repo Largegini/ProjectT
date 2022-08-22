@@ -11,6 +11,7 @@ Enemy::~Enemy()
 
 void Enemy::Start()
 {
+	Key = "Enemy";
 	Texture.Buffer[0] = (char*)" .^---^  ";
 	Texture.Buffer[1] = (char*)"(* ^ *  )";
 	Texture.Buffer[2] = (char*)" /U U  | ";

@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Battle.cpp" />
     <ClCompile Include="BookAni.cpp" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Dungeon2.cpp" />
     <ClCompile Include="Dungeon3.cpp" />
     <ClCompile Include="Dungeon4.cpp" />
@@ -174,6 +175,7 @@
   <ItemGroup>
     <ClInclude Include="Battle.h" />
     <ClInclude Include="BookAni.h" />
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="Dungeon2.h" />
     <ClInclude Include="Dungeon3.h" />
     <ClInclude Include="Dungeon4.h" />
@@ -181,6 +183,7 @@
     <ClInclude Include="DungeonMap.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Guild.h" />
+    <ClInclude Include="MathManager.h" />
     <ClInclude Include="ObjectFactory.h" />
     <ClInclude Include="ObjectManager.h" />
     <ClInclude Include="Outro.h" />

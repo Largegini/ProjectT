@@ -12,7 +12,7 @@ int main()
 {
 	
 
-	/*
+	
 	system("mode con:cols=150 lines=55");
 
 	ULONGLONG Time = GetTickCount64();
@@ -32,7 +32,7 @@ int main()
 			Main.Render();
 		}
 	}
-	*/
+	
 	return 0;
 }
 
