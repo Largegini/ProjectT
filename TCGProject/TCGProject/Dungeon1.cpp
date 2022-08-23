@@ -7,6 +7,7 @@
 #include "ObjectFactory.h"
 #include "QuestStart.h"
 #include "Player.h"
+#include "Enemy.h"
 #include "Bullet.h"
 #include "Portal_01.h"
 #include "Outro.h"
@@ -29,6 +30,11 @@ Dungeon1::~Dungeon1()
 
 void Dungeon1::Start()
 {
+	Object* pEnemy = ObjectFactory<Enemy>::CreateObject();
+	((Enemy*)pEnemy)->SetIndex(0);
+
+	ObjectManager::GetInstance()->AddObject(pEnemy);
+
 	ObjectManager::GetInstance()->SetPlayer(
 		ObjectFactory<Player>::CreateObject(0.0f, 16.0f)
 	);
