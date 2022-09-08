@@ -43,7 +43,6 @@ void Dungeon1::Start()
 
 	Intro = new QuestStart;
 	_Outro = new Outro;
-	//_Player = ObjectFactory<Player>::CreateObject(0.0f, 16.0f);
 	for (int i = 0; i < 4; ++i)
 	{
 		_Enemy[i] = ObjectFactory<Enemy>::CreateObject(30.0f * (i + 1), 17.0f);

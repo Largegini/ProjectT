@@ -150,6 +150,7 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Guild.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
+    <ClCompile Include="ObjectPoolManager.cpp" />
     <ClCompile Include="Outro.cpp" />
     <ClCompile Include="Portal_01.cpp" />
     <ClCompile Include="CursorManager.cpp" />
@@ -164,6 +165,7 @@
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PrototypeManager.cpp" />
     <ClCompile Include="QuestStart.cpp" />
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -186,6 +188,7 @@
     <ClInclude Include="MathManager.h" />
     <ClInclude Include="ObjectFactory.h" />
     <ClInclude Include="ObjectManager.h" />
+    <ClInclude Include="ObjectPoolManager.h" />
     <ClInclude Include="Outro.h" />
     <ClInclude Include="Portal_01.h" />
     <ClInclude Include="CollisionManager.h" />
@@ -203,6 +206,7 @@
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PrototypeManager.h" />
     <ClInclude Include="QuestStart.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Scene.h" />

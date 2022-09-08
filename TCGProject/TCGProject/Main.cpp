@@ -22,7 +22,7 @@ int main()
 
 	while (true)
 	{
-		if (Time + 100 < GetTickCount64())
+		if (Time + 1000/30 < GetTickCount64())
 		{
 			Time = GetTickCount64();
 

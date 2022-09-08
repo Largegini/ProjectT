@@ -10,9 +10,9 @@ Player::~Player()
 {
 }
 
-void Player::Start()
+Object* Player::Start(string _Key)
 {
-	Key = "Player";
+	Key = _Key;
 
 	Texture.Buffer[0] = (char*)" ¡Û ";
 	Texture.Buffer[1] = (char*)"|¦¢|";
@@ -26,6 +26,8 @@ void Player::Start()
 	Info.Position = Vector3(0.0f, 41.0f);
 	Info.Rotation = Vector3(0.0f, 0.0f);
 	Info.Scale = Vector3(Texture.Length, Texture.MaxSize, 0.0f);
+
+	return this;
 }
 
 void Player::Update()

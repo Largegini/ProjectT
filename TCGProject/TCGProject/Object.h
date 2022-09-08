@@ -4,18 +4,21 @@ class Object
 {
 public:
 	Object();
+	Object(Transform _Info) : Info(_Info), Target(nullptr) {};
 	virtual ~Object();
 protected:
 	Transform Info;
 	RenderInfo Texture;
-
+	Object* Target;
 	string Key;
 public:
-	virtual void Start()PURE;
-	virtual void Update()PURE;
+	virtual Object* Start(string _Key)PURE;
+	virtual int Update()PURE;
 	virtual void Render()PURE;
 	virtual void Release()PURE;
+	virtual Object* Clone()PURE;
 public:
+	void SetKey(const string& _Key) { Key = _Key; }
 	string GetKey() const { return Key; }
 
 	Transform GetTransform() const { return Info; }

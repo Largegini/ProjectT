@@ -14,9 +14,9 @@ void InputManager::CheckKey()
 {
 	dwkey = 0;
 
-	if (GetAsyncKeyState(VK_UP) & 0x0001)
+	if (GetAsyncKeyState(VK_UP) & 0x01)
 		dwkey |= KEY_UP;
-	if (GetAsyncKeyState(VK_DOWN) & 0x0001)
+	if (GetAsyncKeyState(VK_DOWN) & 0x01)
 		dwkey |= KEY_DOWN;
 	if (GetAsyncKeyState(VK_LEFT))
 		dwkey |= KEY_LEFT;

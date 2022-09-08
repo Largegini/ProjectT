@@ -127,6 +127,15 @@
     <Filter Include="소스 파일\99.Manager\MathManager">
       <UniqueIdentifier>{4de82b45-9828-4215-8b01-9548ef29dfe3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\99.Manager\Pattern">
+      <UniqueIdentifier>{9aa6f230-1308-45b9-98a2-d71f5b405bbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\99.Manager\Pattern\Prototype">
+      <UniqueIdentifier>{b3ae7065-dbd8-41d1-b2d0-8996faa886ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\99.Manager\Pattern\ObjectPoolManager">
+      <UniqueIdentifier>{e08d1119-1fb7-42c6-a574-3e04a7997e66}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -224,6 +233,12 @@
     </ClCompile>
     <ClCompile Include="Bullet.cpp">
       <Filter>소스 파일\02.Object\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="PrototypeManager.cpp">
+      <Filter>소스 파일\99.Manager\Pattern\Prototype</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectPoolManager.cpp">
+      <Filter>소스 파일\99.Manager\Pattern\ObjectPoolManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -340,6 +355,12 @@
     </ClInclude>
     <ClInclude Include="MathManager.h">
       <Filter>소스 파일\99.Manager\MathManager</Filter>
+    </ClInclude>
+    <ClInclude Include="PrototypeManager.h">
+      <Filter>소스 파일\99.Manager\Pattern\Prototype</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectPoolManager.h">
+      <Filter>소스 파일\99.Manager\Pattern\ObjectPoolManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

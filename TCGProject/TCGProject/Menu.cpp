@@ -116,8 +116,6 @@ void Menu::Update()
 
 void Menu::Render()
 {
-	
-
 	for (int i = 0; i < Title.MaxSize; ++i)
 	{
 		CursorManager::GetInstance()->WriteBuffer(5.0f, 5.0f + i
@@ -128,19 +126,16 @@ void Menu::Render()
 	{
 		CursorManager::GetInstance()->WriteBuffer(145.0f - StartInfo.Length, 
 			22.0f + i, StartInfo.Buffer[i], StartInfo.Color);
-		// y 시작 22 끝 30 중간 27 
 	}
 	for (int i = 0; i < HTPInfo.MaxSize; ++i)
 	{
 		CursorManager::GetInstance()->WriteBuffer(145.0f - HTPInfo.Length,
 			34.0f + i, HTPInfo.Buffer[i], HTPInfo.Color);
-		// y 시작 34 끝 42 중간 38  
 	}
 	for (int i = 0; i < ExitInfo.MaxSize; ++i)
 	{
 		CursorManager::GetInstance()->WriteBuffer(145.0f - ExitInfo.Length, 
 			45.0f + i, ExitInfo.Buffer[i], ExitInfo.Color);
-		// y 시작 45 끝  중간 49  
 	}
 
 	switch (CursorPos)

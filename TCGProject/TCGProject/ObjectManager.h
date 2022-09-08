@@ -21,7 +21,8 @@ private:
 	map<string, list<Object*>> ObjectList;
 	Object* pPlayer;
 public:
-	void AddObject(Object* _Object);
+	void AddObject(string _Key);
+	void AddObject(Vector3 _Position, string _Key);
 
 	void SetPlayer(Object* _Object) { pPlayer = _Object; }
 
