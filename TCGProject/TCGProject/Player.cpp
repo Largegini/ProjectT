@@ -30,20 +30,21 @@ Object* Player::Start(string _Key)
 	return this;
 }
 
-void Player::Update()
+int Player::Update()
 {
 	dwkey = InputManager::GetInstance()->GetKey();
 
 	if (dwkey & KEY_LEFT)
 	{
 		if (Info.Position.x > 0)
-			Info.Position.x -= 2;
+			Info.Position.x -= 2;v
 	}
 	if (dwkey & KEY_RIGHT)
 	{
 		if (Info.Position.x+Info.Scale.x < 150)
 			Info.Position.x += 2;
 	}
+	return;
 }
 
 void Player::Render()

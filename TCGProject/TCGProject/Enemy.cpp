@@ -9,9 +9,9 @@ Enemy::~Enemy()
 {
 }
 
-void Enemy::Start()
+Object* Enemy::Start(string _Key)
 {
-	Key = "Enemy";
+	Key = _Key;
 	Texture.Buffer[0] = (char*)" .^---^  ";
 	Texture.Buffer[1] = (char*)"(* ^ *  )";
 	Texture.Buffer[2] = (char*)" /U U  | ";
@@ -22,11 +22,13 @@ void Enemy::Start()
 	Info.Position = Vector3(0.0f, 20.0f - Texture.MaxSize);
 	Info.Rotation = Vector3(0.0f, 0.0f);
 	Info.Scale = Vector3(Texture.Length , Texture.MaxSize);
+
+	return this;
 }
 
-void Enemy::Update()
+int Enemy::Update()
 {
-
+	return;
 }
 
 void Enemy::Render()

@@ -18,14 +18,12 @@ private:
 public:
 	~ObjectManager();
 private:
-	map<string, list<Object*>> ObjectList;
 	Object* pPlayer;
 public:
 	void AddObject(string _Key);
 	void AddObject(Vector3 _Position, string _Key);
 
 	void SetPlayer(Object* _Object) { pPlayer = _Object; }
-
 	Object* GetPlayer() const { return pPlayer; }
 
 	void Update();

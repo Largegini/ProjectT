@@ -8,13 +8,15 @@ Bullet::~Bullet()
 {
 }
 
-void Bullet::Start()
+Object* Bullet::Start(string _Key)
 {
-	Key = " Bullet";
+	Key = _Key;
+	return this;
 }
 
-void Bullet::Update()
+int Bullet::Update()
 {
+	return;
 }
 
 void Bullet::Render()

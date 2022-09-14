@@ -1,5 +1,6 @@
 #include "PrototypeManager.h"
 #include "ObjectManager.h"
+#include "ObjectPoolManager.h"
 #include "ObjectFactory.h"
 
 ObjectManager* ObjectManager::Instance = nullptr;
@@ -15,33 +16,35 @@ ObjectManager::~ObjectManager()
 
 void ObjectManager::AddObject( string _Key)
 {
-	if(!)
+	if (!ObjectPoolManager::GetInstance()->FindObject(_Key))
+		ObjectPoolManager::GetInstance()->AddObject(_Key);
+
+	ObjectPoolManager::GetInstance()->SwitchingObject(_Key);
 }
+
+void ObjectManager::AddObject(Vector3 _Position, string _Key)
+{
+	if (!ObjectPoolManager::GetInstance()->FindObject(_Key))
+		ObjectPoolManager::GetInstance()->AddObject(_Key);
+
+	ObjectPoolManager::GetInstance()->SwitchingObject(_Key);
+}
+
 
 void ObjectManager::Update()
 {
-
-	for (auto iter = ObjectList.begin(); iter != ObjectList.end(); ++iter)
-		for (auto iter2 = iter->second.begin(); iter2 != iter->second.end(); ++iter2)
-			(*iter2)->Update();
+	ObjectPoolManager::GetInstance()->Update();
 	pPlayer->Update();
 }
 
 void ObjectManager::Render()
 {
-	for (auto iter = ObjectList.begin(); iter != ObjectList.end(); ++iter)
-		for (auto iter2 = iter->second.begin(); iter2 != iter->second.end(); ++iter2)
-			(*iter2)->Render();
+	ObjectPoolManager::GetInstance()->Render();
 	pPlayer->Render();
 }
 
 void ObjectManager::Release()
 {
-	for (auto iter = ObjectList.begin(); iter != ObjectList.end(); ++iter)
-		for (auto iter2 = iter->second.begin(); iter2 != iter->second.end(); ++iter2)
-			(*iter2)->Render();
-
 	delete pPlayer;
 	pPlayer = nullptr;
-
 }
