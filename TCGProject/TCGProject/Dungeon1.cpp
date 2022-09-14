@@ -11,7 +11,6 @@
 #include "Bullet.h"
 #include "Portal_01.h"
 #include "Outro.h"
-#include "ObjectFactory.h"
 #include "ObjectManager.h"
 
 Dungeon1::Dungeon1() : _Intro(1), dwkey(0), _COutro(true), GetTarget(false),
@@ -30,6 +29,7 @@ Dungeon1::~Dungeon1()
 
 void Dungeon1::Start()
 {
+
 	Object* pEnemy = ObjectFactory<Enemy>::CreateObject();
 	((Enemy*)pEnemy)->SetIndex(0);
 

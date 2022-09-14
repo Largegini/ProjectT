@@ -3,7 +3,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "Portal_01.h"
-
+/*
 template <typename T>
 class ObjectFactory
 {
@@ -34,3 +34,4 @@ public:
 		return pObject;
 	}
 };
+*/
