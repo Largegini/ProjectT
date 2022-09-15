@@ -2,6 +2,7 @@
 #include "InputManager.h"
 #include "CursorManager.h"
 #include "CollisionManager.h"
+#include "ObjectManager.h"
 #include "ObjectPoolManager.h"
 #include "ObjectFactory.h"
 #include "Player.h"
@@ -94,7 +95,8 @@ void Village::Start()
     Key.MaxSize = 4;
     Key.Color = 8;
 
-   ObjectPoolManager::GetInstance()->
+    _Player = ObjectManager::GetInstance()->GetPlayer();
+    _Player->SetPosition(0.0f, 41.0f);
 
     _Portal1 = ObjectFactory<Portal_01>::CreateObject();
 
