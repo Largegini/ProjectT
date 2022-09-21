@@ -31,7 +31,7 @@ Object* Portal_01::Start(string _Key)
 
 int Portal_01::Update()
 {
-	return;
+	return 0;
 }
 
 void Portal_01::Render()

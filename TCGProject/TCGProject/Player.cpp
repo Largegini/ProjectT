@@ -37,14 +37,14 @@ int Player::Update()
 	if (dwkey & KEY_LEFT)
 	{
 		if (Info.Position.x > 0)
-			Info.Position.x -= 2;v
+			Info.Position.x -= 2;
 	}
 	if (dwkey & KEY_RIGHT)
 	{
 		if (Info.Position.x+Info.Scale.x < 150)
 			Info.Position.x += 2;
 	}
-	return;
+	return 0;
 }
 
 void Player::Render()

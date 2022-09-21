@@ -16,7 +16,7 @@ Object* Bullet::Start(string _Key)
 
 int Bullet::Update()
 {
-	return;
+	return 0;
 }
 
 void Bullet::Render()

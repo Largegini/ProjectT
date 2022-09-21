@@ -25,6 +25,7 @@ void Stage::Start()
 void Stage::Update()
 {
 	MapManager::GetInstance()->Update();
+
 }
 
 void Stage::Render()

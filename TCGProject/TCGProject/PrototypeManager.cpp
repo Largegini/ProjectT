@@ -1,5 +1,7 @@
 #include "PrototypeManager.h"
 #include "Player.h"
+#include "Enemy.h"
+#include "Portal_01.h"
 
 PrototypeManager* PrototypeManager::Instance = nullptr;
 
@@ -24,6 +26,12 @@ void PrototypeManager::Initialize()
 
 	Key = "Player";
 	ObjectList[Key] = (new Player(Info))->Start(Key);
+
+	Key = "Enemy";
+	ObjectList[Key] = (new Enemy(Info))->Start(Key);
+
+	Key = "Portal";
+	ObjectList[Key] = (new Portal_01(Info))->Start(Key);
 }
 
 Object* PrototypeManager::FindObject(string _Key)

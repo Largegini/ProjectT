@@ -1,6 +1,7 @@
 #include "Battle.h"
+#include "Player.h"
 #include "InputManager.h"
-#include "ObjectFactory.h"
+#include "ObjectManager.h"
 
 Battle::Battle(): dwkey(0), pPlayer(nullptr)
 {
@@ -16,14 +17,13 @@ Battle::~Battle()
 
 void Battle::Start()
 {
-	pPlayer = ObjectFactory<Player>::CreateObject(30.0f, 30.0f);
+	pPlayer = ObjectManager::GetInstance()->GetPlayer();
+	pPlayer->SetPosition(30.0f, 30.0f);
 
 	for (int i = 0; i < 4; ++i)
 	{
-		pEnemy[i] = ObjectFactory<Enemy>::CreateObject(100.0f+(i*15.0f), 20.0f+ (i*5.0f));
+		ObjectManager::GetInstance()->AddObject(Vector3(100.0f + (i * 15.0f), 20.0f + (i * 5.0f)), "Enemy");
 	}
-
-
 }
 
 void Battle::Update()

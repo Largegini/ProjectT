@@ -28,7 +28,7 @@ Object* Enemy::Start(string _Key)
 
 int Enemy::Update()
 {
-	return;
+	return 0;
 }
 
 void Enemy::Render()

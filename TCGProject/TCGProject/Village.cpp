@@ -98,16 +98,14 @@ void Village::Start()
     _Player = ObjectManager::GetInstance()->GetPlayer();
     _Player->SetPosition(0.0f, 41.0f);
 
-    _Portal1 = ObjectFactory<Portal_01>::CreateObject();
-
-    _Portal2 = ObjectFactory<Portal_01>::CreateObject(106.0f,40.0f);
+    ObjectManager::GetInstance()->AddObject("Portal");
+    
+    ObjectManager::GetInstance()->AddObject(Vector3(106.0f,40.0f),"Portal");
 }
 
 void Village::Update()
 {
     dwkey = InputManager::GetInstance()->GetKey();
-    _Player->Update();
-    
    
     if (CollisionManager::RectCollision(_Portal2->GetTransform(), 
         _Player->GetTransform()) )
@@ -166,13 +164,6 @@ void Village::Render()
                 (Store.Length / 2) - (Key.Length / 2), 35.0f + i,
                 Key.Buffer[i], Key.Color);
         }
-    }
-    _Player->Render();
-
-    if (dwkey & KEY_E)
-    {
-        _Portal1->Render();
-        _Portal2->Render();
     }
 }
 
