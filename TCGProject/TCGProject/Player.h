@@ -7,8 +7,6 @@ public:
 	Player();
 	Player(Transform _Info) : Object(_Info) {};
 	virtual ~Player();
-private:
-	DWORD dwkey;
 public:
 	virtual Object* Start(string _Key)override;
 	virtual int Update()override;

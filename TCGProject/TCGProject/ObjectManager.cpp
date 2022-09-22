@@ -27,7 +27,7 @@ void ObjectManager::AddObject(Vector3 _Position, string _Key)
 	if (!ObjectPoolManager::GetInstance()->FindObject(_Key))
 		ObjectPoolManager::GetInstance()->AddObject(_Key);
 
-	ObjectPoolManager::GetInstance()->SwitchingObject(_Key);
+	ObjectPoolManager::GetInstance()->SwitchingObject(_Key, _Position);
 }
 
 

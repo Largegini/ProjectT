@@ -63,6 +63,23 @@ void CursorManager::WriteBuffer(Vector3 _Position, char* _str, int _Color)
 	cout << _str;
 }
 
+void CursorManager::WriteBuffer(float _x, float _y, float _Value, int _Color)
+{
+	COORD CursorPosition = { (SHORT)_x , (SHORT)_y };
+
+	SetConsoleCursorPosition(HBuffer[BufferIndex], CursorPosition);
+
+	SetColor(_Color);
+
+	DWORD dw;
+
+	char Buffer[128] = "";
+
+	sprintf(Buffer, "%.6f", _Value);
+
+	WriteFile(HBuffer[BufferIndex], Buffer, (DWORD)strlen(Buffer), &dw, NULL);
+}
+
 void CursorManager::FlippingBuffer()
 {
 	SetConsoleActiveScreenBuffer(HBuffer[BufferIndex]);

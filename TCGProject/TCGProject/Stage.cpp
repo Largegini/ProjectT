@@ -20,17 +20,20 @@ void Stage::Start()
 		ObjectManager::GetInstance()->SetPlayer(PObj);
 
 	MapManager::GetInstance()->SetMap(MapID::VILLAGE);
+
 }
 
 void Stage::Update()
 {
 	MapManager::GetInstance()->Update();
+	ObjectManager::GetInstance()->Update();
 
 }
 
 void Stage::Render()
 {
 	MapManager::GetInstance()->Render();
+	ObjectManager::GetInstance()->Render();
 
 }
 

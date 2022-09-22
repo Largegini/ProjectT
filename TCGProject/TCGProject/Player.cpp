@@ -2,7 +2,7 @@
 #include "CursorManager.h"
 #include "InputManager.h"
 
-Player::Player(): dwkey(0)
+Player::Player()
 {
 }
 
@@ -32,7 +32,7 @@ Object* Player::Start(string _Key)
 
 int Player::Update()
 {
-	dwkey = InputManager::GetInstance()->GetKey();
+	DWORD dwkey = InputManager::GetInstance()->GetKey();
 
 	if (dwkey & KEY_LEFT)
 	{
@@ -44,6 +44,7 @@ int Player::Update()
 		if (Info.Position.x+Info.Scale.x < 150)
 			Info.Position.x += 2;
 	}
+
 	return 0;
 }
 
@@ -54,6 +55,8 @@ void Player::Render()
 		CursorManager::GetInstance()->WriteBuffer(Info.Position.x,Info.Position.y+i,
 			Texture.Buffer[i], Texture.Color);
 	}
+	CursorManager::GetInstance()->WriteBuffer(0.0f, 1.0f, Info.Position.x);
+	CursorManager::GetInstance()->WriteBuffer(0.0f, 2.0f, Info.Position.y);
 }
 
 void Player::Release()

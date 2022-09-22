@@ -29,25 +29,17 @@ Dungeon1::~Dungeon1()
 
 void Dungeon1::Start()
 {
-
-	Object* pEnemy = ObjectFactory<Enemy>::CreateObject();
-	((Enemy*)pEnemy)->SetIndex(0);
-
-	ObjectManager::GetInstance()->AddObject(pEnemy);
-
-	ObjectManager::GetInstance()->SetPlayer(
-		ObjectFactory<Player>::CreateObject(0.0f, 16.0f)
-	);
-
 	_Player = ObjectManager::GetInstance()->GetPlayer();
+	_Player->SetPosition(0.0f, 16.0f);
 
 	Intro = new QuestStart;
 	_Outro = new Outro;
 	for (int i = 0; i < 4; ++i)
 	{
-		_Enemy[i] = ObjectFactory<Enemy>::CreateObject(30.0f * (i + 1), 17.0f);
+		ObjectManager::GetInstance()->AddObject(Vector3(30.0f * (i + 1), 17.0f),"Enemy");
 	}
-	Target = ObjectFactory<Portal_01>::CreateObject(135.0f, 15.0f);
+
+	ObjectManager::GetInstance()->AddObject(Vector3(135.0f, 15.0f),"Portal");
 
 	Ground.Buffer[0] = (char*)"-----------------------------------------------------------------------------------------------------------------------------------------------------";
 
@@ -65,7 +57,7 @@ void Dungeon1::Start()
 void Dungeon1::Update()
 {
 	dwkey = InputManager::GetInstance()->GetKey();
-
+/*
 	if (GetAsyncKeyState(VK_TAB))
 	{
 		Object* pBullet = ObjectFactory<Bullet>::CreateObject();
@@ -75,6 +67,7 @@ void Dungeon1::Update()
 
 		ObjectManager::GetInstance()->AddObject(pBullet);
 	}
+*/
 
 	_Intro = Intro->GetCheck();
 	_COutro = _Outro->GetCheck();
