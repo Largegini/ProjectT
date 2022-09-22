@@ -2,6 +2,7 @@
 #include "InputManager.h"
 #include "CursorManager.h"
 #include "CollisionManager.h"
+#include "ObjectManager.h"
 #include "ObjectPoolManager.h"
 #include "ObjectFactory.h"
 #include "Player.h"
@@ -94,19 +95,18 @@ void Village::Start()
     Key.MaxSize = 4;
     Key.Color = 8;
 
-   ObjectPoolManager::GetInstance()->
+    _Player = ObjectManager::GetInstance()->GetPlayer();
+    _Player->SetPosition(0.0f, 41.0f);
 
-    _Portal1 = ObjectFactory<Portal_01>::CreateObject();
-
-    _Portal2 = ObjectFactory<Portal_01>::CreateObject(106.0f,40.0f);
+    ObjectManager::GetInstance()->AddObject(Vector3(30.0,40.0f),"Portal");
+    
+    ObjectManager::GetInstance()->AddObject(Vector3(106.0f,40.0f),"Portal");
 }
 
 void Village::Update()
 {
     dwkey = InputManager::GetInstance()->GetKey();
-    _Player->Update();
-    
-   
+   /*
     if (CollisionManager::RectCollision(_Portal2->GetTransform(), 
         _Player->GetTransform()) )
     {
@@ -121,6 +121,8 @@ void Village::Update()
         if (dwkey & KEY_UP)
             MapManager::GetInstance()->SetMap(MapID::GUILD);
     }
+   */
+
 }
 
 void Village::Render()
@@ -143,7 +145,7 @@ void Village::Render()
         CursorManager::GetInstance()->WriteBuffer(0.0f, 45.0f+i,
             Ground.Buffer[i], Ground.Color);
     }
-
+    /*
     if (CollisionManager::RectCollision(_Portal1->GetTransform(), 
         _Player->GetTransform()) )
     {
@@ -165,13 +167,7 @@ void Village::Render()
                 Key.Buffer[i], Key.Color);
         }
     }
-    _Player->Render();
-
-    if (dwkey & KEY_E)
-    {
-        _Portal1->Render();
-        _Portal2->Render();
-    }
+    */
 }
 
 void Village::Release()
