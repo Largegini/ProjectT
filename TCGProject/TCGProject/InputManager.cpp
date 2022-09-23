@@ -28,7 +28,5 @@ void InputManager::CheckKey()
 		dwkey |= KEY_RETURN;
 	if (GetAsyncKeyState(VK_ESCAPE))
 		dwkey |= KEY_ESCAPE;
-	if (GetAsyncKeyState(0x45))
-		dwkey |= KEY_E;
 
 }

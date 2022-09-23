@@ -43,14 +43,16 @@ void Guild::Start()
 	_BookAni->Start();
 }
 
-void Guild::Update()
+MapID Guild::Update()
 {
 	if (CatAni < 40)
 		CatAni++;
 	else
 		CatAni = 0;
 	
-	_BookAni->Update();
+	State = _BookAni->Update();
+
+	return State;
 }
 
 void Guild::Render()

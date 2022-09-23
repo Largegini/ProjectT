@@ -3,11 +3,16 @@
 
 
 class Object;
+class Map;
 class Stage:public Scene
 {
 public:
 	Stage();
 	virtual ~Stage();
+
+private:
+	Map* MapState;
+	MapID _MapID;
 
 public:
 	virtual void Start()override;
@@ -15,5 +20,6 @@ public:
 	virtual void Render()override;
 	virtual void Release()override;
 
+	void SetMap(MapID _MapID);
 };
 

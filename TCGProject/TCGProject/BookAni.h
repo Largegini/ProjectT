@@ -24,7 +24,7 @@ private:
 
 public:
 	void Start();
-	void Update();
+	MapID Update();
 	void Render();
 	void Release();
 };

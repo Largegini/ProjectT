@@ -54,7 +54,7 @@ void Dungeon1::Start()
 	_Outro->Start();
 }
 
-void Dungeon1::Update()
+MapID Dungeon1::Update()
 {
 	dwkey = InputManager::GetInstance()->GetKey();
 /*
@@ -87,7 +87,9 @@ void Dungeon1::Update()
 	}
 
 	if(GetTarget && !_COutro)
-		MapManager::GetInstance()->SetMap(MapID::VILLAGE);
+		return MapID::VILLAGE;
+
+	return MapID::DUNGEON1;
 }
 
 void Dungeon1::Render()

@@ -23,7 +23,7 @@ Object* Player::Start(string _Key)
 	Texture.MaxSize = 4;
 	Texture.Color = 15;
 
-	Info.Position = Vector3(0.0f, 41.0f);
+	Info.Position = Vector3(0.0f, 0.0f);
 	Info.Rotation = Vector3(0.0f, 0.0f);
 	Info.Scale = Vector3(Texture.Length, Texture.MaxSize, 0.0f);
 

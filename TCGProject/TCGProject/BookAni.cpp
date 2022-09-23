@@ -152,11 +152,9 @@ void BookAni::Start()
     Cursor.MaxSize = 2;
     Cursor.Color = 12;
     Cursor.VectorInfo.Position = Vector3(97.0f, 0.0f);
-    
-
 }
 
-void BookAni::Update()
+MapID BookAni::Update()
 {
     dwkey = InputManager::GetInstance()->GetKey();
 
@@ -187,7 +185,7 @@ void BookAni::Update()
             switch (CursorPos)
             {
             case 0:
-                MapManager::GetInstance()->SetMap(MapID::DUNGEON1);
+                return MapID::DUNGEON1;
                 break;
             case 1:
 
@@ -213,6 +211,7 @@ void BookAni::Update()
                 CursorPos++;
         }
     }
+    return MapID::GUILD;
 }
 
 void BookAni::Render()

@@ -33,14 +33,14 @@ void ObjectManager::AddObject(Vector3 _Position, string _Key)
 
 void ObjectManager::Update()
 {
-	ObjectPoolManager::GetInstance()->Update();
 	pPlayer->Update();
+	ObjectPoolManager::GetInstance()->Update();
 }
 
 void ObjectManager::Render()
 {
-	ObjectPoolManager::GetInstance()->Render();
 	pPlayer->Render();
+	ObjectPoolManager::GetInstance()->Render();
 }
 
 void ObjectManager::Release()

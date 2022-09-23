@@ -8,7 +8,7 @@ public:
 	virtual ~Map();
 public:
 	virtual void Start()PURE;
-	virtual void Update()PURE;
+	virtual MapID Update()PURE;
 	virtual void Render()PURE;
 	virtual void Release()PURE;
 };

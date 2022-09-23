@@ -94,16 +94,9 @@ void Village::Start()
     Key.Length = strlen("| ^ | 들어가기");
     Key.MaxSize = 4;
     Key.Color = 8;
-
-    _Player = ObjectManager::GetInstance()->GetPlayer();
-    _Player->SetPosition(0.0f, 41.0f);
-
-    ObjectManager::GetInstance()->AddObject(Vector3(30.0,40.0f),"Portal");
-    
-    ObjectManager::GetInstance()->AddObject(Vector3(106.0f,40.0f),"Portal");
 }
 
-void Village::Update()
+MapID Village::Update()
 {
     dwkey = InputManager::GetInstance()->GetKey();
    /*
@@ -123,6 +116,7 @@ void Village::Update()
     }
    */
 
+    return MapID::VILLAGE;
 }
 
 void Village::Render()
@@ -172,9 +166,4 @@ void Village::Render()
 
 void Village::Release()
 {
-    delete _Player;
-    _Player = nullptr;
-
-    delete _Portal1;
-    _Portal1 = nullptr;
 }

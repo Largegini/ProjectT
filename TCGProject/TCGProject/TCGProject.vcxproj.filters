@@ -52,9 +52,6 @@
     <Filter Include="소스 파일\03.UI\MenuUI\HowtoPlay">
       <UniqueIdentifier>{dc245e9c-53a1-4065-947d-4f9c94357705}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\99.Manager\MapManager">
-      <UniqueIdentifier>{ff2c0ad9-c138-4c94-ba82-5e1aff4b24d9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="헤더 파일\Include">
       <UniqueIdentifier>{dda6c22f-1497-4bd4-98b4-a281a31642c7}</UniqueIdentifier>
     </Filter>
@@ -177,9 +174,6 @@
     <ClCompile Include="Store.cpp">
       <Filter>소스 파일\04.Map\Store</Filter>
     </ClCompile>
-    <ClCompile Include="MapManager.cpp">
-      <Filter>소스 파일\99.Manager\MapManager</Filter>
-    </ClCompile>
     <ClCompile Include="Dungeon1.cpp">
       <Filter>소스 파일\04.Map\Dungeon</Filter>
     </ClCompile>
@@ -283,9 +277,6 @@
     </ClInclude>
     <ClInclude Include="Store.h">
       <Filter>소스 파일\04.Map\Store</Filter>
-    </ClInclude>
-    <ClInclude Include="MapManager.h">
-      <Filter>소스 파일\99.Manager\MapManager</Filter>
     </ClInclude>
     <ClInclude Include="Constant.h">
       <Filter>헤더 파일\Include</Filter>
