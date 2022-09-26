@@ -76,6 +76,8 @@ void ObjectPoolManager::Update()
 				DisableList[(*iter2)->GetKey()].push_back((*iter2));
 				iter2 = iter->second.erase(iter2);
 			}
+			else
+				++iter2;
 		}
 	}
 }

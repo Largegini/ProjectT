@@ -24,16 +24,11 @@ void Stage::Start()
 	if (PObj != nullptr)
 		ObjectManager::GetInstance()->SetPlayer(PObj);
 
-	
-
 	_MapID = MapID::VILLAGE;
 
 	SetMap(_MapID);
 
 	MapState->Start();
-
-	//ObjectManager::GetInstance()->AddObject(Vector3(30.0, 40.0f), "Portal");
-	//ObjectManager::GetInstance()->AddObject(Vector3(106.0f, 40.0f), "Portal");
 }
 
 void Stage::Update()
