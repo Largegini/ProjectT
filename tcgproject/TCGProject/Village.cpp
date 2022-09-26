@@ -94,6 +94,12 @@ void Village::Start()
     Key.Length = strlen("| ^ | 들어가기");
     Key.MaxSize = 4;
     Key.Color = 8;
+
+    _Player = ObjectManager::GetInstance()->GetPlayer();
+    _Player->SetPosition(0.0f, 41.0f);
+
+    ObjectManager::GetInstance()->AddObject(Vector3(30.0, 40.0f), "Portal");
+    ObjectManager::GetInstance()->AddObject(Vector3(106.0f, 40.0f), "Portal");
 }
 
 MapID Village::Update()
