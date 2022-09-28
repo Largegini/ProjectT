@@ -3,6 +3,8 @@
 
 class Scene
 {
+protected:
+	MapID _MapID;
 public:
 	Scene();
 	virtual ~Scene();

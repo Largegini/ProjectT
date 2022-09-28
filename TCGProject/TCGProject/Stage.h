@@ -12,7 +12,6 @@ public:
 
 private:
 	Map* MapState;
-	MapID _MapID;
 
 public:
 	virtual void Start()override;
@@ -21,5 +20,6 @@ public:
 	virtual void Release()override;
 
 	void SetMap(MapID _MapID);
+	
 };
 

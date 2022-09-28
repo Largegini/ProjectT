@@ -27,8 +27,6 @@ void Stage::Start()
 	_MapID = MapID::VILLAGE;
 
 	SetMap(_MapID);
-
-	MapState->Start();
 }
 
 void Stage::Update()
@@ -90,4 +88,5 @@ void Stage::SetMap(MapID _MapID)
 	default:
 		break;
 	}
+	MapState->Start();
 }

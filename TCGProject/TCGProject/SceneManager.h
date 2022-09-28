@@ -25,5 +25,7 @@ public:
 	void Update();
 	void Render();
 	void Release();
+
+	Scene* GetSceneState() { return SceneState; }
 };
 

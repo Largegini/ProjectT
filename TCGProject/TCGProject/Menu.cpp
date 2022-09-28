@@ -112,6 +112,7 @@ void Menu::Update()
 			}
 		}
 	}
+
 }
 
 void Menu::Render()
