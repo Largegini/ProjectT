@@ -105,23 +105,11 @@ void Village::Start()
 MapID Village::Update()
 {
     dwkey = InputManager::GetInstance()->GetKey();
-   /*
-    if (CollisionManager::RectCollision(_Portal2->GetTransform(), 
-        _Player->GetTransform()) )
+    if (ObjectPoolManager::GetInstance()->CollisionCheck("Portal", _Player->GetTransform()))
     {
         if (dwkey & KEY_UP)
-            MapManager::GetInstance()->SetMap(MapID::STORE);
+            return MapID::GUILD;
     }
-
-    if (CollisionManager::RectCollision(_Portal1->GetTransform(),
-        _Player->GetTransform()))
-    {
-
-        if (dwkey & KEY_UP)
-            MapManager::GetInstance()->SetMap(MapID::GUILD);
-    }
-   */
-
     return MapID::VILLAGE;
 }
 

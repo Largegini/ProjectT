@@ -1,5 +1,6 @@
 #include "ObjectPoolManager.h"
 #include "PrototypeManager.h"
+#include "CollisionManager.h"
 #include "Object.h"
 
 ObjectPoolManager* ObjectPoolManager::Instance = nullptr;
@@ -91,4 +92,15 @@ void ObjectPoolManager::Render()
 			(*iter2)->Render();
 		}
 	}
+}
+
+bool ObjectPoolManager::CollisionCheck(string _Key, Transform _Position)
+{
+	for (auto iter = EnableList[_Key].begin(); iter != EnableList[_Key].end();
+		++iter)
+	{
+		if (CollisionManager::RectCollision((*iter)->GetTransform(), _Position))
+			return true;
+	}
+	return false;
 }
