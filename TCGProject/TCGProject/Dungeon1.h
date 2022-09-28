@@ -16,8 +16,6 @@ private:
 	QuestStart* Intro;
 	Outro* _Outro;
 	Object* _Player;
-	Object* _Enemy[4];
-	Object* Target;
 
 	DWORD dwkey;
 	int _Intro;

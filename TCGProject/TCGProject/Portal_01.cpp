@@ -1,10 +1,7 @@
 #include "Portal_01.h"
 #include "CursorManager.h"
 #include "SceneManager.h"
-#include "Logo.h"
-#include "Menu.h"
 #include "Stage.h"
-#include "Battle.h"
 
 Portal_01::Portal_01()
 {
@@ -29,12 +26,13 @@ Object* Portal_01::Start(string _Key)
 	Info.Position = Vector3(30.0f, 40.0f);
 	Info.Rotation = Vector3(0.0f, 0.0f);
 	Info.Scale = Vector3((float)Texture.Length , (float)Texture.MaxSize);
-
 	return this;
 }
 
 int Portal_01::Update()
 {
+	if(_MIDInfo != Stage::_MapID)
+		return 1;
 
 	return 0;
 }

@@ -8,6 +8,8 @@
 #include "Dungeon1.h"
 #include "Guild.h"
 
+MapID Stage::_MapID = MapID::MAX;
+
 Stage::Stage() :MapState(nullptr)
 {
 }
@@ -31,7 +33,7 @@ void Stage::Start()
 
 void Stage::Update()
 {
-	ObjectManager::GetInstance()->Update();
+	ObjectManager::GetInstance()->Update(_MapID);
 	if (_MapID != MapState->Update())
 	{
 		_MapID = MapState->Update();
@@ -42,7 +44,7 @@ void Stage::Update()
 void Stage::Render()
 {
 	MapState->Render();
-	ObjectManager::GetInstance()->Render();
+	ObjectManager::GetInstance()->Render(_MapID);
 }
 
 void Stage::Release()

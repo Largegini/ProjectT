@@ -99,7 +99,11 @@ void Village::Start()
     _Player->SetPosition(0.0f, 41.0f);
 
     ObjectManager::GetInstance()->AddObject(Vector3(30.0, 40.0f), "Portal");
+    _Portal1 = ObjectPoolManager::GetInstance()->Getter("Portal");
     ObjectManager::GetInstance()->AddObject(Vector3(106.0f, 40.0f), "Portal");
+    _Portal2 = ObjectPoolManager::GetInstance()->Getter("Portal");
+    _Portal1->SetMapID(MapID::VILLAGE);
+    _Portal2->SetMapID(MapID::VILLAGE);
 }
 
 MapID Village::Update()
@@ -133,29 +137,15 @@ void Village::Render()
         CursorManager::GetInstance()->WriteBuffer(0.0f, 45.0f+i,
             Ground.Buffer[i], Ground.Color);
     }
-    /*
-    if (CollisionManager::RectCollision(_Portal1->GetTransform(), 
-        _Player->GetTransform()) )
+    if (ObjectPoolManager::GetInstance()->CollisionCheck("Portal", _Player->GetTransform()))
     {
         for (int i = 0; i < Key.MaxSize; ++i)
         {
             CursorManager::GetInstance()->WriteBuffer(Quest.VectorInfo.Position.x +
-                (Quest.Length / 2) - (Key.Length/2), 35.0f + i, 
+                (Quest.Length / 2) - (Key.Length / 2), 35.0f + i,
                 Key.Buffer[i], Key.Color);
         }
     }
-
-    if (CollisionManager::RectCollision(_Portal2->GetTransform(), 
-        _Player->GetTransform()) )
-    {
-        for (int i = 0; i < Key.MaxSize; ++i)
-        {
-            CursorManager::GetInstance()->WriteBuffer(Store.VectorInfo.Position.x +
-                (Store.Length / 2) - (Key.Length / 2), 35.0f + i,
-                Key.Buffer[i], Key.Color);
-        }
-    }
-    */
 }
 
 void Village::Release()

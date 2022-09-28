@@ -11,6 +11,7 @@ protected:
 	RenderInfo Texture;
 	Object* Target;
 	string Key;
+	MapID _MIDInfo;
 public:
 	virtual Object* Start(string _Key)PURE;
 	virtual int Update()PURE;
@@ -26,5 +27,6 @@ public:
 	void SetPosition(float _x, float _y) { Info.Position = Vector3(_x, _y); }
 	void SetPosition(Vector3 _Position) { Info.Position = Vector3(_Position); }
 	void SetIndex(int _Index);
+	void SetMapID(MapID _MapID) { _MIDInfo = _MapID; }
 };
 

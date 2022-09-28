@@ -26,6 +26,8 @@ public:
 	void Update();
 	void Render();
 
+public:
 	bool CollisionCheck(string _Key, Transform _Position);
+	Object* Getter(string _Key);
 };
 

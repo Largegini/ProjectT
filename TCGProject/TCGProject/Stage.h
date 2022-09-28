@@ -12,7 +12,8 @@ public:
 
 private:
 	Map* MapState;
-
+public:
+	static MapID _MapID;
 public:
 	virtual void Start()override;
 	virtual void Update()override;

@@ -19,15 +19,14 @@ public:
 	~ObjectManager();
 private:
 	Object* pPlayer;
-	Object* pObject;
 public:
 	void AddObject(string _Key);
 	void AddObject(Vector3 _Position, string _Key);
 
 	void SetPlayer(Object* _Object) { pPlayer = _Object; }
 	Object* GetPlayer() const { return pPlayer; }
-	Object* GetObejct() const { return pObject; }
-	void Update();
-	void Render();
+public:
+	void Update(MapID _MapID);
+	void Render(MapID _MapID);
 	void Release();
 };

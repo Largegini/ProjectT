@@ -31,15 +31,17 @@ void ObjectManager::AddObject(Vector3 _Position, string _Key)
 }
 
 
-void ObjectManager::Update()
+void ObjectManager::Update(MapID _MapID)
 {
-	pPlayer->Update();
+	if(_MapID != MapID::GUILD && _MapID != MapID::STORE)
+		pPlayer->Update();
 	ObjectPoolManager::GetInstance()->Update();
 }
 
-void ObjectManager::Render()
+void ObjectManager::Render(MapID _MapID)
 {
-	pPlayer->Render();
+	if (_MapID != MapID::GUILD && _MapID != MapID::STORE)
+		pPlayer->Render();
 	ObjectPoolManager::GetInstance()->Render();
 }
 

@@ -104,3 +104,10 @@ bool ObjectPoolManager::CollisionCheck(string _Key, Transform _Position)
 	}
 	return false;
 }
+
+Object* ObjectPoolManager::Getter(string _Key)
+{
+	auto iter = EnableList[_Key].back();
+	return iter;
+}
+
