@@ -2,7 +2,7 @@
 #include "MapManager.h"
 #include "CursorManager.h"
 #include "SceneManager.h"
-#include "CollisionManager.h"
+#include "ObjectPoolManager.h"
 #include "InputManager.h"
 #include "ObjectFactory.h"
 #include "QuestStart.h"
@@ -14,12 +14,8 @@
 #include "ObjectManager.h"
 
 Dungeon1::Dungeon1() : _Intro(1), dwkey(0), _COutro(true), GetTarget(false),
-Intro(nullptr), _Outro(nullptr), _Player(nullptr),Target(nullptr)
+Intro(nullptr), _Outro(nullptr), _Player(nullptr)
 {
-	for (int i = 0; i < 4; ++i)
-	{
-		_Enemy[i] = nullptr;
-	}
 }
 
 Dungeon1::~Dungeon1()
@@ -79,8 +75,7 @@ MapID Dungeon1::Update()
 
 	_Player->Update();
 
-	if (CollisionManager::RectCollision(Target->GetTransform(),
-		_Player->GetTransform()))
+	if (ObjectPoolManager::GetInstance()->CollisionCheck("Portal", _Player->GetTransform()))
 	{
 		if (dwkey & KEY_UP)
 			GetTarget = true;
@@ -99,14 +94,6 @@ void Dungeon1::Render()
 
 	else if (!GetTarget)
 	{
-		_Player->Render();
-		Target->Render();
-
-		for (int i = 0; i < 4; ++i)
-		{
-			_Enemy[i]->Render();
-		}
-
 		for (int i = 0; i < Ground.MaxSize; ++i)
 		{
 			CursorManager::GetInstance()->WriteBuffer(0.0f, 20.0f + i,
@@ -117,17 +104,9 @@ void Dungeon1::Render()
 	if (GetTarget)
 		_Outro->Render();
 
-	if (CollisionManager::RectCollision(Target->GetTransform(),
-		_Player->GetTransform()))
-	{
-		CursorManager::GetInstance()->WriteBuffer(73.0f, 0.0f ,
-			(char*)"Ãæµ¹", Ground.Color);
-	}
-
 	for (int i = 0; i < 4; ++i)
 	{
-		if (CollisionManager::RectCollision(_Enemy[i]->GetTransform(),
-			_Player->GetTransform()))
+		if (ObjectPoolManager::GetInstance()->CollisionCheck("Enemy", _Player->GetTransform()))
 		{
 			SceneManager::GetInstance()->SetScene(SceneID::BATTLE);
 		}
@@ -138,10 +117,8 @@ void Dungeon1::Release()
 {
 	delete Intro;
 	Intro = nullptr;
-
-	delete Target;
-	Target = nullptr;
-
+	delete _Outro;
+	_Outro = nullptr;
 	delete _Player;
 	_Player = nullptr;
 }
