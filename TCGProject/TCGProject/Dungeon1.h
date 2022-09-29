@@ -16,6 +16,7 @@ private:
 	QuestStart* Intro;
 	Outro* _Outro;
 	Object* _Player;
+	Object* _Portal;
 
 	DWORD dwkey;
 	int _Intro;
