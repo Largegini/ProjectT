@@ -1,8 +1,16 @@
 #include "Enemy.h"
 #include "CursorManager.h"
+#include "DungeonEnemy.h"
+#include "BattleEnemy.h"
 
-Enemy::Enemy()
+Bridge* Enemy::BridgeList[2];
+
+Enemy::Enemy(): pBridge(nullptr)
 {
+	for (int i = 0; i < 2; ++i)
+	{
+		BridgeList[i] = nullptr;
+	}
 }
 
 Enemy::~Enemy()
@@ -22,6 +30,9 @@ Object* Enemy::Start(string _Key)
 	Info.Position = Vector3(0.0f, 20.0f - Texture.MaxSize);
 	Info.Rotation = Vector3(0.0f, 0.0f);
 	Info.Scale = Vector3(Texture.Length , Texture.MaxSize);
+
+	BridgeList[EnemyID_DUNGEONENEMY] = new DungeonEnemy;
+	BridgeList[EnemyID_BATTLEENEMY] = new BattleEnemy;
 
 	return this;
 }

@@ -140,12 +140,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Battle.cpp" />
+    <ClCompile Include="BattleEnemy.cpp" />
     <ClCompile Include="BookAni.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Dungeon2.cpp" />
     <ClCompile Include="Dungeon3.cpp" />
     <ClCompile Include="Dungeon4.cpp" />
     <ClCompile Include="Dungeon5.cpp" />
+    <ClCompile Include="DungeonEnemy.cpp" />
     <ClCompile Include="DungeonMap.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Guild.cpp" />
@@ -175,14 +177,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Battle.h" />
+    <ClInclude Include="BattleEnemy.h" />
     <ClInclude Include="BookAni.h" />
+    <ClInclude Include="Bridge.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Dungeon2.h" />
     <ClInclude Include="Dungeon3.h" />
     <ClInclude Include="Dungeon4.h" />
     <ClInclude Include="Dungeon5.h" />
+    <ClInclude Include="DungeonEnemy.h" />
     <ClInclude Include="DungeonMap.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemyBridge.h" />
     <ClInclude Include="Guild.h" />
     <ClInclude Include="MathManager.h" />
     <ClInclude Include="ObjectFactory.h" />

@@ -4,6 +4,7 @@
 class QuestStart;
 class Object;
 class Outro;
+class Battle;
 class Dungeon1 : public Map
 {
 public:
@@ -16,11 +17,14 @@ private:
 	QuestStart* Intro;
 	Outro* _Outro;
 	Object* _Player;
+	Battle* _Battle;
 
 	DWORD dwkey;
 	int _Intro;
 	bool _COutro;
 	bool GetTarget;
+	bool PECCheck;
+	bool BCheck;
 public:
 	virtual void Start()override;
 	virtual MapID Update()override;

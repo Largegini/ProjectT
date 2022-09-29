@@ -1,17 +1,25 @@
 #pragma once
 #include "Object.h"
+
+class Bridge;
 class Enemy : public Object
 {
+private:
+	static Bridge* BridgeList[EnemyID_MAX];
 public:
 	Enemy();
 	Enemy(Transform _Info) : Object(_Info) {};
 	virtual ~Enemy();
 private:
+	Bridge* pBridge;
+
 public:
 	virtual Object* Start(string _Key)override;
 	virtual int Update()override;
 	virtual void Render()override;
 	virtual void Release()override;
 	virtual Object* Clone()override { return new Enemy(*this); }
+public:
+	void SetBridge(Bridge* _Bridge) { pBridge = _Bridge; }
 };
 

@@ -35,9 +35,6 @@ void SceneManager::SetScene(SceneID _SceneID)
 	case SceneID::STAGE:
 		SceneState = new Stage;
 		break;
-	case SceneID::BATTLE :
-		SceneState = new Battle;
-		break;
 	case SceneID::EXIT:
 		exit(NULL);
 		break;

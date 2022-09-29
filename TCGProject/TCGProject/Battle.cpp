@@ -20,33 +20,20 @@ void Battle::Start()
 	pPlayer = ObjectManager::GetInstance()->GetPlayer();
 	pPlayer->SetPosition(30.0f, 30.0f);
 
-	for (int i = 0; i < 4; ++i)
+	for (int i = 0; i < rand()%4+1; ++i)
 	{
 		ObjectManager::GetInstance()->AddObject(Vector3(100.0f + (i * 15.0f), 20.0f + (i * 5.0f)), "Enemy");
 	}
 }
 
-void Battle::Update()
+bool Battle::Update()
 {
 	dwkey = InputManager::GetInstance()->GetKey();
-
-	pPlayer->Update();
-
-	for (int i = 0; i < 4; ++i)
-	{
-		pEnemy[i]->Update();
-	}
-
+	return true;
 }
 
 void Battle::Render()
 {
-	pPlayer->Render();
-
-	for (int i = 0; i < 4; ++i)
-	{
-		pEnemy[i]->Render();
-	}
 }
 
 void Battle::Release()

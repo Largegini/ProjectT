@@ -112,9 +112,6 @@
     <Filter Include="소스 파일\99.Manager\ObjectManager">
       <UniqueIdentifier>{004ae2db-fdbc-4b2d-9430-124c6907ca1e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\01.Scene\Battle">
-      <UniqueIdentifier>{5f0555f5-ab18-49c3-b97e-2df2612639d9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\node">
       <UniqueIdentifier>{1106d336-0bcd-414e-9eb3-e34f9580b997}</UniqueIdentifier>
     </Filter>
@@ -132,6 +129,18 @@
     </Filter>
     <Filter Include="소스 파일\99.Manager\Pattern\ObjectPoolManager">
       <UniqueIdentifier>{e08d1119-1fb7-42c6-a574-3e04a7997e66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\04.Map\Battle">
+      <UniqueIdentifier>{5f0555f5-ab18-49c3-b97e-2df2612639d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.Object\Enemy\EnemyBridge">
+      <UniqueIdentifier>{6f01e393-7781-496d-8ef4-cc5c22d2941a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.Object\Enemy\EnemyBridge\DungeonEnemy">
+      <UniqueIdentifier>{08f0b310-6f88-40d0-b662-eba268f65333}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.Object\Enemy\EnemyBridge\BattleEnemy">
+      <UniqueIdentifier>{147eb91d-792c-40d5-8717-494fb6500cc9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -223,7 +232,7 @@
       <Filter>소스 파일\99.Manager\ObjectManager</Filter>
     </ClCompile>
     <ClCompile Include="Battle.cpp">
-      <Filter>소스 파일\01.Scene\Battle</Filter>
+      <Filter>소스 파일\04.Map\Battle</Filter>
     </ClCompile>
     <ClCompile Include="Bullet.cpp">
       <Filter>소스 파일\02.Object\Bullet</Filter>
@@ -233,6 +242,12 @@
     </ClCompile>
     <ClCompile Include="ObjectPoolManager.cpp">
       <Filter>소스 파일\99.Manager\Pattern\ObjectPoolManager</Filter>
+    </ClCompile>
+    <ClCompile Include="DungeonEnemy.cpp">
+      <Filter>소스 파일\02.Object\Enemy\EnemyBridge\DungeonEnemy</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleEnemy.cpp">
+      <Filter>소스 파일\02.Object\Enemy\EnemyBridge\BattleEnemy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -339,7 +354,7 @@
       <Filter>소스 파일\99.Manager\ObjectManager</Filter>
     </ClInclude>
     <ClInclude Include="Battle.h">
-      <Filter>소스 파일\01.Scene\Battle</Filter>
+      <Filter>소스 파일\04.Map\Battle</Filter>
     </ClInclude>
     <ClInclude Include="Bullet.h">
       <Filter>소스 파일\02.Object\Bullet</Filter>
@@ -352,6 +367,18 @@
     </ClInclude>
     <ClInclude Include="ObjectPoolManager.h">
       <Filter>소스 파일\99.Manager\Pattern\ObjectPoolManager</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyBridge.h">
+      <Filter>소스 파일\02.Object\Enemy\EnemyBridge</Filter>
+    </ClInclude>
+    <ClInclude Include="DungeonEnemy.h">
+      <Filter>소스 파일\02.Object\Enemy\EnemyBridge\DungeonEnemy</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleEnemy.h">
+      <Filter>소스 파일\02.Object\Enemy\EnemyBridge\BattleEnemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Bridge.h">
+      <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
