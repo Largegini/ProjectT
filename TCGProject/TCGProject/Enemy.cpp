@@ -27,6 +27,7 @@ Object* Enemy::Start(string _Key)
 	Texture.MaxSize = 3;
 	Texture.Color = 1;
 
+
 	Info.Position = Vector3(0.0f, 20.0f - Texture.MaxSize);
 	Info.Rotation = Vector3(0.0f, 0.0f);
 	Info.Scale = Vector3(Texture.Length , Texture.MaxSize);
