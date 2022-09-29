@@ -11,10 +11,12 @@
 #include "Bullet.h"
 #include "Portal_01.h"
 #include "Outro.h"
+#include "Battle.h"
 #include "ObjectManager.h"
 
 Dungeon1::Dungeon1() : _Intro(1), dwkey(0), _COutro(true), GetTarget(false),
-Intro(nullptr), _Outro(nullptr), _Player(nullptr)
+PECCheck(false), BCheck(false), Intro(nullptr), _Outro(nullptr), _Player(nullptr), 
+_Battle(nullptr)
 {
 }
 
@@ -30,6 +32,7 @@ void Dungeon1::Start()
 
 	Intro = new QuestStart;
 	_Outro = new Outro;
+	_Battle = new Battle;
 	for (int i = 0; i < 4; ++i)
 	{
 		ObjectManager::GetInstance()->AddObject(Vector3(30.0f * (i + 1), 17.0f),"Enemy");
@@ -48,6 +51,7 @@ void Dungeon1::Start()
 
 	Intro->Start();
 	_Outro->Start();
+	
 }
 
 MapID Dungeon1::Update()
@@ -84,6 +88,20 @@ MapID Dungeon1::Update()
 	if(GetTarget && !_COutro)
 		return MapID::VILLAGE;
 
+	for (int i = 0; i < 4; ++i)
+	{
+		if (ObjectPoolManager::GetInstance()->CollisionCheck("Enemy", _Player->GetTransform()))
+		{
+			PECCheck = true;
+		}
+	}
+	if (PECCheck)
+	{
+		if (!BCheck)
+			_Battle->Start();
+
+		BCheck = _Battle->Update();
+	}
 	return MapID::DUNGEON1;
 }
 
@@ -104,13 +122,8 @@ void Dungeon1::Render()
 	if (GetTarget)
 		_Outro->Render();
 
-	for (int i = 0; i < 4; ++i)
-	{
-		if (ObjectPoolManager::GetInstance()->CollisionCheck("Enemy", _Player->GetTransform()))
-		{
-			SceneManager::GetInstance()->SetScene(SceneID::BATTLE);
-		}
-	}
+	if (PECCheck)
+		_Battle->Render();
 }
 
 void Dungeon1::Release()
