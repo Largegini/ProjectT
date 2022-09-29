@@ -14,7 +14,7 @@
 #include "ObjectManager.h"
 
 Dungeon1::Dungeon1() : _Intro(1), dwkey(0), _COutro(true), GetTarget(false),
-Intro(nullptr), _Outro(nullptr), _Player(nullptr)
+Intro(nullptr), _Outro(nullptr), _Player(nullptr), _Portal(nullptr)
 {
 }
 
@@ -36,6 +36,8 @@ void Dungeon1::Start()
 	}
 
 	ObjectManager::GetInstance()->AddObject(Vector3(135.0f, 15.0f),"Portal");
+	_Portal = ObjectPoolManager::GetInstance()->Getter("Portal");
+	_Portal->SetMapID(MapID::DUNGEON1);
 
 	Ground.Buffer[0] = (char*)"-----------------------------------------------------------------------------------------------------------------------------------------------------";
 
@@ -92,13 +94,10 @@ void Dungeon1::Render()
 	if (_Intro == 1)
 		Intro->Render();
 
-	else if (!GetTarget)
+	for (int i = 0; i < Ground.MaxSize; ++i)
 	{
-		for (int i = 0; i < Ground.MaxSize; ++i)
-		{
-			CursorManager::GetInstance()->WriteBuffer(0.0f, 20.0f + i,
-				Ground.Buffer[i], Ground.Color);
-		}
+		CursorManager::GetInstance()->WriteBuffer(0.0f, 20.0f + i,
+			Ground.Buffer[i], Ground.Color);
 	}
 
 	if (GetTarget)
